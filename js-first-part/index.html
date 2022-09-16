@@ -7,6 +7,10 @@
     <title>First JS Practice</title>
 </head>
 <body>
+    <h2>Addition:</h2>
+    <p id="operationResult"></p>
+    <p id="concatenationResult"></p>
+
     <script>
         console.log("Hello, World");
         
@@ -35,6 +39,12 @@
         let expNumberFunction = Math.pow(firstNumber,secondNumber); //x ** y produces the same result as Math.pow(x,y):
 
         console.log(sumNumber, subNumber, mulNumber, divNumber, modNumber, incrementNumber, decrementNumber, expNumber, expNumberFunction);
+
+        let concatenateNumber = "" + firstNumber + secondNumber; //Number concatenation
+        concatenateNumber =+ concatenateNumber; //Concatenated number(string) become a number
+        
+        document.getElementById("operationResult").innerHTML = "first Number + second Number = " + (firstNumber+secondNumber); //use of parenthesis to keep the first and second Numbers as numbers
+        document.getElementById("concatenationResult").innerHTML = concatenateNumber + 2; //Add 2 to the concatenated Number w/ a number as result
 
     </script>
     
