@@ -40,11 +40,16 @@
 
         console.log(sumNumber, subNumber, mulNumber, divNumber, modNumber, incrementNumber, decrementNumber, expNumber, expNumberFunction);
 
+
         let concatenateNumber = "" + firstNumber + secondNumber; //Number concatenation
-        concatenateNumber =+ concatenateNumber; //Concatenated number(string) become a number
+        concatenateNumber =+ concatenateNumber; //Concatenated number(string) become a number or concatenateNumber = Number(concatenateNumber)
         
         document.getElementById("operationResult").innerHTML = "first Number + second Number = " + (firstNumber+secondNumber); //use of parenthesis to keep the first and second Numbers as numbers
         document.getElementById("concatenationResult").innerHTML = concatenateNumber + 2; //Add 2 to the concatenated Number w/ a number as result
+        
+        let stringNumber = "10";
+        let addConcResult = firstNumber + secondNumber + stringNumber; //1. firstNumber + secondNumber is added because they are both numbers. Then the result + "10" is concatenated because stringNumber is a string.
+        console.log (addConcResult);
 
     </script>
     
