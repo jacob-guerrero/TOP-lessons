@@ -8,6 +8,8 @@
 </head>
 <body>
 
+    <button>Press me!</button>
+
     <script>
         const string = 'The revolution will not be televised.';
         const badString = string;
@@ -27,6 +29,23 @@
         //Escaping characters in a string, we do this by putting a backslash just before the character
         const bigmouth = 'I\'ve got no right to take my place...';
         console.log(bigmouth);
+
+        //Concatenating strings, using backtick characters (`), is just like a normal string, except you can include variables in it, wrapped inside ${}
+        const name = 'Chris';
+        const greeting = `Hello, ${name}`;
+        console.log (greeting);
+        const one = 'Hello, ';
+        const two = 'how are you?';
+        const joined = `${one}${two}`;
+        console.log(joined);
+
+        const button = document.querySelector('button');
+        function greet() {
+        const name = prompt('What is your name?', "susan");
+        alert(`Hello ${name}, nice to see you!`);
+        }
+        button.addEventListener('click', greet);
+
 
     </script>
 </body>
