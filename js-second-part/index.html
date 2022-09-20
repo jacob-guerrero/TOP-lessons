@@ -7,8 +7,26 @@
     <title>JS Second Part</title>
 </head>
 <body>
-    
+
     <script>
+        const string = 'The revolution will not be televised.';
+        const badString = string;
+        console.log(badString);
+
+        //Single and doble quotes work the same way
+        const sgl = 'Single quotes.';
+        const dbl = "Double quotes";
+        console.log(sgl, dbl);
+
+        //You can't include the same quote mark inside the string if it's being used to contain them. The following examples are correct:
+        const sglDbl = 'Would you eat a "fish supper"?';
+        const dblSgl = "I'm feeling blue.";
+        console.log(sglDbl);
+        console.log(dblSgl);
+
+        //Escaping characters in a string, we do this by putting a backslash just before the character
+        const bigmouth = 'I\'ve got no right to take my place...';
+        console.log(bigmouth);
 
     </script>
 </body>
