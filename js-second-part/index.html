@@ -57,10 +57,10 @@
         console.log(`${myString2} is now a ` + typeof myString2);
 
         
-        //string methods 
+        //String methods 
         //Extracting strings (slice, substring, substr)
-        let text = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        let length = text.length;
+        let txt = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        let length = txt.length;
         console.log(length);
 
         let strOne = "Apple, Banana, Kiwi";
@@ -75,6 +75,20 @@
         console.log(partOne, partTwo, partThree);
         console.log(partFour, partFive);
         console.log(partSix, partSeven);
+
+
+        //Replacing string content
+        let text = "Please visit Microsoft and MICROSOFT!";
+        let newText = text.replace(/Microsoft/gi, "W3Schools"); //It uses regex flags
+        console.log(text);
+        console.log(newText);
+
+        //Upper and lower case
+        let text1 = "Hello World!";
+        let text2 = text1.toUpperCase();
+        let text3 = text1.toLocaleLowerCase();
+        console.log(text2);
+        console.log(text3);
 
     </script>
 </body>
