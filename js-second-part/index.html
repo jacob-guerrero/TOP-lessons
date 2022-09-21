@@ -56,6 +56,25 @@
         const myString2 = myNum2.toString();
         console.log(`${myString2} is now a ` + typeof myString2);
 
+        
+        //string methods 
+        //Extracting strings (slice, substring, substr)
+        let text = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        let length = text.length;
+        console.log(length);
+
+        let strOne = "Apple, Banana, Kiwi";
+        let partOne = strOne.slice(7,13); //13 not included
+        let partTwo = strOne.slice(-12, -6);
+        let partThree = strOne.slice(7); //The method will slice out the rest of the string in this case
+        let partFour =  strOne.substring(7,13); //Is similar to slice() but values less than 0 are treated as 0
+        let partFive = strOne.substring(-12,5);
+        let partSix = strOne.substr(7,6); //Is similar to slice() but the second parameter specifies the length of the extracted part
+        let partSeven = strOne.substr(-4); //In this case the position counts from the end of the string
+
+        console.log(partOne, partTwo, partThree);
+        console.log(partFour, partFive);
+        console.log(partSix, partSeven);
 
     </script>
 </body>
