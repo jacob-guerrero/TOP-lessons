@@ -90,6 +90,29 @@
         console.log(text2);
         console.log(text3);
 
+
+        //Remove spaces
+        let textWithSpaces = "      Hello World!      ";
+        let textWithoutSpaces = textWithSpaces.trim();
+        console.log(textWithoutSpaces);
+
+        //Padding
+        let textNoPad = "5";
+        let textPad = textNoPad.padStart(4, "x");
+        let textPadTwo = textNoPad.padEnd(3, "0");
+        console.log(textPad,textPadTwo);
+
+        //Extracting strings
+        let textOne = "Hello World!";
+        let char = textOne.charAt(0); //Returns character at index (0) in this case
+        let charTwo = textOne.charCodeAt(0); //Return the unicode of the character at index (0) 
+        console.log(char);
+
+        //String to Array
+        let myArr = textOne.split(" "); //split on spaces
+        let myArr2 = textOne.split("");
+        console.log(myArr, myArr2);
+
     </script>
 </body>
 </html>
