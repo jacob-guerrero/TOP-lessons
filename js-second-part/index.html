@@ -116,8 +116,10 @@
 
         //Login check from javascript exercise
         let user = prompt("Who's there?");
+
         if (user == "Admin") {
             let password = prompt("Password?");
+            
             if (password == "TheMaster") {
                 alert("Welcome!");
             }
@@ -128,7 +130,7 @@
                 alert("Wrong password");
             }
         }
-        else if (user == "Cancel") {
+        else if (user == "Cancel" || user == "" || user == null) {
             alert("Canceled");
         }
         else {
