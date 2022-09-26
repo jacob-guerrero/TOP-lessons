@@ -113,6 +113,29 @@
         let myArr2 = textOne.split("");
         console.log(myArr, myArr2);
 
+
+        //Login check from javascript exercise
+        let user = prompt("Who's there?");
+        if (user == "Admin") {
+            let password = prompt("Password?");
+            if (password == "TheMaster") {
+                alert("Welcome!");
+            }
+            else if(password == "Cancel" || password == "" || password == null) {
+                alert("Canceled");
+            }
+            else {
+                alert("Wrong password");
+            }
+        }
+        else if (user == "Cancel") {
+            alert("Canceled");
+        }
+        else {
+            alert("I don't know you");
+        }
+
+
     </script>
 </body>
 </html>
