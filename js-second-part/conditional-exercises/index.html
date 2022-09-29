@@ -188,7 +188,7 @@
         }
       </script> -->
 
-      <script>
+      <!-- <script>
         let result;
         let a = 2;
         let b = 2;
@@ -196,6 +196,19 @@
         ? result = "Below"
         : result = "Over";
         alert(result);
+      </script> -->
+
+      <script>
+        let login = prompt("What are you?");
+        let message;
+        login == "Employee"
+        ? message = "Hello"
+        : login == "Director"
+        ? message = "Greetings"
+        : login == ""
+        ? message = "No login"
+        : message = "";
+        alert(message);
       </script>
 
 </html>
