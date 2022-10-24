@@ -9,7 +9,7 @@
 <body>
 
     <!--Function Scope example-->
-    <script>
+    <!-- <script>
         const x = 1;
     
         function a() {
@@ -27,7 +27,47 @@
           document.body.appendChild(para);
           para.textContent = `Value: ${value}`;
         }
-      </script>
+    </script> -->
+
+    <!-- <script>
+        const x = 1;
+
+        function a() {
+        const y = 2;
+        output(x); /* x is a global variable */
+        }
+
+        function b() {
+        const z = 3;
+        output(x); /* x is a global variable */
+        }
+
+        function output(value) {
+        const para = document.createElement('p');
+        document.body.appendChild(para);
+        para.textContent = `Value: ${value}`;
+        }
+    </script> -->
+
+    <script>
+        const x = 1;
+
+        function a() {
+        const y = 2;
+        output(z); /* z is not in the same function scope */
+        }
+
+        function b() {
+        const z = 3;
+        output(y); /* y is not in the same function scope */
+        }
+
+        function output(value) {
+        const para = document.createElement('p');
+        document.body.appendChild(para);
+        para.textContent = `Value: ${value}`;
+        }
+    </script>
 
 </body>
 </html>
