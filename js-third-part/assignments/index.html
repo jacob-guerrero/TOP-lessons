@@ -9,15 +9,24 @@
 <body>
     
     <script>
+        /* Function Declaration */
         function add7(num) {
             return num + 7;
         }
         console.log(add7(5));
 
+        /* Arrow Function */
         let multiply = (a, b) => a*b;
         console.log (multiply(7, 6));
 
-        
+        /* Function Expression */
+        let myCapitalizedString = function(string) {
+            let stringLow = string.toLowerCase();
+            return stringLow.charAt(0).toUpperCase() + stringLow.slice(1);
+        }
+        console.log (myCapitalizedString("heLLo WORLd!"));
+
+
     </script>
 
 </body>
