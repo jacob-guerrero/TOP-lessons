@@ -146,7 +146,7 @@
     </script> -->
 
     <!-- Function pow(x,n) -->
-    <script>
+    <!-- <script>
 
         let x = prompt ("Write a number");
         let n = prompt ("Write a positive exp");
@@ -162,6 +162,21 @@
         } else {
             alert (pow(x,n));
         }
+    </script> -->
+
+    <!-- Arrow functions -->
+    <script>
+
+        function ask(question, yes, no) {
+        if (confirm(question)) yes();
+        else no();
+        }
+
+        ask(
+        "Do you agree?",
+        () => alert("You agreed."),
+        () => alert("You canceled the execution.")
+        );
     </script>
 
 </body>
