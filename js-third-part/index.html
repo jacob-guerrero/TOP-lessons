@@ -157,8 +157,11 @@
             }
             return y;
         }
-        alert (pow(x,n));
-        
+        if (n < 0) {
+            alert (`${n} is not supported, please write a positive integer`)
+        } else {
+            alert (pow(x,n));
+        }
     </script>
 
 </body>
