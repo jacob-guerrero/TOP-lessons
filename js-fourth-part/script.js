@@ -24,3 +24,18 @@ document.getElementById("demo-list").innerHTML = fruitList;
 
 console.log(car);
 console.log(cars[0]);
+
+
+// METHODS
+const colors = [
+    "red",
+    "blue",
+    "purple",
+    "black"
+];
+console.log (colors.toString());  // From Array to string
+colors.pop(); // Removes the last element
+colors.push("white"); // Adds a new element (at the end)
+colors.shift(); // Removes the first array element
+colors.unshift("green"); // Adds a new element (at the beginning);
+colors[colors.length] = "cyan"; //Adds a new element using length
