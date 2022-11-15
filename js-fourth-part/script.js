@@ -71,3 +71,13 @@ function getFilterCat(cat) {
 }
 const catsFilter = catsLower.filter(getFilterCat); // Filter() test each item and create a new collection containing only items that match
 document.getElementById("filter-example").innerHTML = catsFilter;
+
+const dogs = [
+    "big",
+    "small",
+    "super big",
+    "medium"
+]
+for (const dog of dogs) {
+    console.log(dog); // The typeof "dog" is string
+}
