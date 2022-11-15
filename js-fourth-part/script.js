@@ -1,4 +1,4 @@
-const cars = [
+/* const cars = [
     "Saab",
     "Volvo",
     "BMW"
@@ -49,4 +49,25 @@ myChildren.splice(1,2);
 console.log(myChildren);
 
 const lightColor = colors.slice(1); // Slice out a piece of an array into a new one, being (1) the starting index
-console.log(lightColor);
+console.log(lightColor); */
+
+
+// Looping 
+function toLower(string) {
+    return string.toLowerCase();
+}
+const cats = [
+    "LeOparD",
+    "ServAl",
+    "jaGUar",
+    "tIgER",
+    "LiOn"
+];
+const catsLower = cats.map(toLower); // Map() does something to each item and create a new collection containing the changed items
+document.getElementById("map-example").innerHTML = catsLower;
+
+function getFilterCat(cat) {
+    return cat.startsWith("l");
+}
+const catsFilter = catsLower.filter(getFilterCat); // Filter() test each item and create a new collection containing only items that match
+document.getElementById("filter-example").innerHTML = catsFilter;
