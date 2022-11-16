@@ -52,8 +52,9 @@ const lightColor = colors.slice(1); // Slice out a piece of an array into a new 
 console.log(lightColor); */
 
 
+
 // Looping 
-function toLower(string) {
+/* function toLower(string) {
     return string.toLowerCase();
 }
 const cats = [
@@ -80,4 +81,26 @@ const dogs = [
 ]
 for (const dog of dogs) {
     console.log(dog); // The typeof "dog" is string
+} */
+
+
+let i = 10;
+let output = document.querySelector('.output');
+output.innerHTML = '';
+
+// const para = document.createElement('p');
+// para.textContent = ;
+// output.appendChild(para);
+while (i >= 0) {
+    
+    const para = document.createElement('p');
+    if(i === 10) {
+        para.textContent = `Countdown ${i}`;
+    } else if (i === 0){
+        para.textContent = "Blast off!";
+    } else {
+        para.textContent = i;
+    }
+    output.appendChild(para);
+    i--;
 }
