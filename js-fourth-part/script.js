@@ -84,13 +84,9 @@ for (const dog of dogs) {
 } */
 
 
-let i = 10;
+/* let i = 10;
 let output = document.querySelector('.output');
 output.innerHTML = '';
-
-// const para = document.createElement('p');
-// para.textContent = ;
-// output.appendChild(para);
 while (i >= 0) {
     
     const para = document.createElement('p');
@@ -103,4 +99,28 @@ while (i >= 0) {
     }
     output.appendChild(para);
     i--;
+} */
+
+
+const people = ['Chris', 'Anne', 'Colin', 'Terri', 'Phil', 'Lola', 'Sam', 'Kay', 'Bruce'];
+
+const admitted = document.querySelector('.admitted');
+const refused = document.querySelector('.refused');
+admitted.textContent = 'Admit: ';
+refused.textContent = 'Refuse: ';
+
+// loop starts here
+let i = 0;
+while (i<people.length) {
+    if (people[i] == "Phil" || people[i] == "Lola" ) {
+        refused.textContent += `${people[i]}, `;
+    } else {
+        admitted.textContent += `${people[i]}, `;
+    }
+    
+    i++;
 }
+admitted.textContent = `${admitted.textContent.slice(0,admitted.textContent.length-2)}.`;
+refused.textContent = `${refused.textContent.slice(0,refused.textContent.length-2)}.`;
+// refused.textContent += ;
+// admitted.textContent += ;
