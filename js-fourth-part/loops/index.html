@@ -63,7 +63,16 @@
     ] 
 
     // Add your code here
-    
+    let i = 0;
+    while (i < phonebook.length) {
+      if(phonebook[i]["name"] === name) {
+        para.textContent = `Nombre: ${phonebook[i]["name"]}\n Number: ${phonebook[i]["number"]}`;
+        break;
+      } else {
+        para.textContent = 'User not found';
+      }
+      i++;
+    }
 
     // Don't edit the code below here!
     const section = document.querySelector('section');
