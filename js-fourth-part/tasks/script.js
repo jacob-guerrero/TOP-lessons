@@ -16,9 +16,18 @@ while (j++ < 5) alert( j ); // 1, 2, 3, 4, 5
 
 
 /* Third task */
-for (let i = 0; i < 5; i++) alert( i );
+/* for (let i = 0; i < 5; i++) alert( i );
 // 0, 1, 2, 3, 4
 
 for (let j = 0; j < 5; ++j) alert( j );
 // 0, 1, 2, 3, 4
+ */
+
+
+/* Fourth task */
+for (let i = 1; i <= 10; i++) {
+  if (i % 2 == 0) {
+    alert (i);
+  }
+}
 
