@@ -1,6 +1,5 @@
 /* First task */
 /* let i = 3;
-
 while (i) {
   alert( i-- ); // Last value alerted is 1
 } */
@@ -25,9 +24,15 @@ for (let j = 0; j < 5; ++j) alert( j );
 
 
 /* Fourth task */
-for (let i = 1; i <= 10; i++) {
+/* for (let i = 1; i <= 10; i++) {
   if (i % 2 == 0) {
     alert (i);
   }
 }
+ */
 
+
+/* Fifth task */
+for (let i = 0; i < 3; i++) {
+  alert( `number ${i}!` );
+}
