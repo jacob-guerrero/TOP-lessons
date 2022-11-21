@@ -33,7 +33,7 @@ for (let j = 0; j < 5; ++j) alert( j );
 
 
 /* Fifth task */
-let i=0;
+/* let i=0;
 while (i < 3) {
   alert( `number ${i}!` );
   i++;
@@ -41,4 +41,13 @@ while (i < 3) {
 
 for (let i = 0; i < 3; i++) {
   alert( `number ${i}!` );
+}
+ */
+
+
+/* Sixth task */
+let number = prompt("Type a number grater than 100");
+while (number < 100) {
+  if (number == "" || number == null) break;
+  number = prompt("Type a number grater than 100");
 }
