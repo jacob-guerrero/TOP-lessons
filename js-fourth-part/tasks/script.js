@@ -51,3 +51,9 @@ while (number < 100) {
   if (number == "" || number == null) break;
   number = prompt("Type a number grater than 100");
 }
+
+/* let num;
+do {
+  num = prompt("Enter a number greater than 100?", 0);
+} while (num <= 100 && num); */
+
