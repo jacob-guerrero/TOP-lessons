@@ -33,6 +33,12 @@ for (let j = 0; j < 5; ++j) alert( j );
 
 
 /* Fifth task */
+let i=0;
+while (i < 3) {
+  alert( `number ${i}!` );
+  i++;
+}
+
 for (let i = 0; i < 3; i++) {
   alert( `number ${i}!` );
 }
