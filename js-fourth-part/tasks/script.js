@@ -61,14 +61,17 @@ do {
 
 /* Final task */
 let n = 10;
-let j = 0;
 
 for (let i = 1; i < n; i++) {
-  if (n % i == 0) {
+  let j = 1;
+  let remainCounter = 0;
+  while (j <= i) {
+    if (i % j == 0) {
+      remainCounter++;
+    }
     j++;
-    console.log(i);
   }
-  if (i % i == 0 && j < 2) {
-    console.log(i)
+  if (remainCounter == 2) {
+    console.log(i);
   }
 }
