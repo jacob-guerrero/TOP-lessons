@@ -66,7 +66,7 @@ for (let i = 1; i < n; i++) {
   let j = 1;
   let remainCounter = 0;
   while (j <= i) {
-    if (i % j == 0) {
+    if (i % j == 0 && remainCounter <= 2) {
       remainCounter++;
     }
     j++;
