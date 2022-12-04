@@ -11,13 +11,13 @@ const allSelectors = document.querySelectorAll('container');
 console.dir(container); // Contains a nodelist
 
 const div = document.createElement('div');
-const textDiv =document.createTextNode('This was created using JavaScript');
+const textDiv =document.createTextNode('This was created first using JavaScript');
 div.appendChild(textDiv);
 container.appendChild(div);
 
 const div2 = document.createElement('div');
-const textDiv2 =document.createTextNode('This was created using JavaScript2');
+const textDiv2 = document.createTextNode('This was created second using JS');
 div2.appendChild(textDiv2);
-const firstDiv = document.querySelector('.display')
-container.insertBefore(div2, firstDiv)
+const firstDiv = document.querySelector('.display');
+container.insertBefore(div2, firstDiv);
 
