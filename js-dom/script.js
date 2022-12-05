@@ -30,3 +30,10 @@ const divAttribute = document.createElement('div');
 divAttribute.setAttribute('id', 'theDiv');
 container.appendChild(divAttribute);
 
+// Working with classes
+const divClass = document.createElement('div');
+divClass.classList.add('new');
+divClass.classList.remove('new');
+divClass.classList.toggle('active'); // Add 'active', if it doesn't remove it
+container.appendChild(divClass);
+
