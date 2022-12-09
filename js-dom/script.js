@@ -34,6 +34,14 @@ container.appendChild(divAttribute);
 const divClass = document.createElement('div');
 divClass.classList.add('new');
 divClass.classList.remove('new');
-divClass.classList.toggle('active'); // Add 'active', if it doesn't remove it
+divClass.classList.toggle('active'); // if div doesn't have class "active" then add it, or if it does, then remove it.
 container.appendChild(divClass);
+
+
+// Adding text content
+const divText = document.createElement('div');
+divText.textContent = "Hiii uwu";
+container.appendChild(divText);
+// It's not recommended to use .innerHTML (it creates security issues)
+
 
