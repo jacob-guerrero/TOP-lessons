@@ -48,3 +48,9 @@ container.appendChild(divText);
 divText.style.color = 'blue';
 divText.style.cssText = 'color: blue; background: white;';
 divText.setAttribute('style', 'color: blue; background: white;');
+
+// Exercise
+const p = document.createElement('p');
+p.textContent = "Hey I'm red!";
+p.style.color = 'red';
+container.appendChild(p);
