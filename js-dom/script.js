@@ -73,4 +73,4 @@ pDiv = document.createElement('p');
 pDiv.textContent = "ME TOO!";
 divParent.appendChild(pDiv);
 
-container.appendChild(divParent);
+container.appendChild(divParent); // Hint 3rd exercise
