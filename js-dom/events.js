@@ -8,3 +8,14 @@ btn2.addEventListener('click', () => {
     alert("Hello World");
 });
 
+// Methods using named functions
+function alertFunction() {
+    alert("YAY! YOU DID IT!");
+}
+
+// Method in "Click me Again3"
+btn3.onclick = alertFunction;
+
+// Method in "click me too2"
+btn2.addEventListener('click', alertFunction);
+
