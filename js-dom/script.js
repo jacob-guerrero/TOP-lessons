@@ -14,7 +14,7 @@ console.dir(container); // Contains a nodelist
 
 // DOM Methods
 const div = document.createElement('div'); // Create Elements
-const textDiv =document.createTextNode('This was created first using JavaScript');
+const textDiv = document.createTextNode('This was created first using JavaScript');
 div.appendChild(textDiv); // Add text
 container.appendChild(div); // Append elements
 
@@ -44,4 +44,7 @@ divText.textContent = "Hiii uwu";
 container.appendChild(divText);
 // It's not recommended to use .innerHTML (it creates security issues)
 
-
+// Adding styles 
+divText.style.color = 'blue';
+divText.style.cssText = 'color: blue; background: white;';
+divText.setAttribute('style', 'color: blue; background: white;');
