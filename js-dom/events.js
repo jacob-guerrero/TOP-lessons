@@ -27,3 +27,10 @@ btn.addEventListener('click', function (e) {
     e.target.style.background = 'blue';
 });
 
+// Attaching listeners to groups of nodes
+const buttons = document.querySelectorAll('button');
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+        alert(button.id);
+    });
+});
