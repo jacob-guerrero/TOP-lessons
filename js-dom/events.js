@@ -19,3 +19,11 @@ btn3.onclick = alertFunction;
 // Method in "click me too2"
 btn2.addEventListener('click', alertFunction);
 
+//
+btn.addEventListener('click', function (e) {
+    console.log(e.target);
+});
+btn.addEventListener('click', function (e) {
+    e.target.style.background = 'blue';
+});
+
