@@ -74,3 +74,8 @@ pDiv.textContent = "ME TOO!";
 divParent.appendChild(pDiv);
 
 container.appendChild(divParent); // Hint 3rd exercise
+
+
+const divDinamic = document.createElement('div');
+divDinamic.textContent = 'Change my color';
+container.appendChild(divDinamic);
