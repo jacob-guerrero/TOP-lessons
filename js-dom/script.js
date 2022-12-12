@@ -79,3 +79,9 @@ container.appendChild(divParent); // Hint 3rd exercise
 const divDinamic = document.createElement('div');
 divDinamic.textContent = 'Change my color';
 container.appendChild(divDinamic);
+
+divDinamic.addEventListener('click', changeDivColor);
+
+function changeDivColor () {
+    divDinamic.classList.toggle('change');
+}
