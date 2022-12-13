@@ -19,7 +19,7 @@ btn3.onclick = alertFunction;
 // Method in "click me too2"
 btn2.addEventListener('click', alertFunction);
 
-//
+// Method in "click me1"
 btn.addEventListener('click', function (e) {
     console.log(e.target);
 });
@@ -29,7 +29,7 @@ btn.addEventListener('click', function (e) {
 
 // Attaching listeners to groups of nodes
 const buttons = document.querySelectorAll('button');
-buttons.forEach((button) => {
+buttons.forEach( (button) => {
     button.addEventListener('click', () => {
         alert(button.id);
     });
