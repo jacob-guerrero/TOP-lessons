@@ -5,7 +5,7 @@ let user = {
     error: true,
 }
 delete user.error;
-console.log(user);
+//console.log(user);
 // let key = prompt("What info do you want?", 'name');
 // alert(user[key]);
 
@@ -27,8 +27,22 @@ function makeUser(name, age) {
     return user1;
 }
 let userCreated = makeUser('Joseph', 20);
-console.log(userCreated);
+//console.log(userCreated);
 
 
 // Using "in" to know if the property exist
-console.log("name" in userCreated);
+//console.log("name" in userCreated);
+
+
+// Using for...in
+let user2 = {
+    name: "John",
+    age: 30,
+    isAdmin: true,
+};
+
+for (let prop1 in user2) {
+    console.log(prop1); //prop1 has all the properties of user2
+    console.log(user2[prop1]);
+}
+
