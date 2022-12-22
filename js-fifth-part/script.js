@@ -10,7 +10,7 @@ console.log(user);
 // alert(user[key]);
 
 
-// Complex expressions must use square brackets:
+// Complex expressions must use square brackets
 /* let fruit = prompt('what fruit do you want?', 'apple'); 
 let bag = {
   [fruit + 'Computers']: 5
@@ -30,3 +30,5 @@ let userCreated = makeUser('Joseph', 20);
 console.log(userCreated);
 
 
+// Using "in" to know if the property exist
+console.log("name" in userCreated);
