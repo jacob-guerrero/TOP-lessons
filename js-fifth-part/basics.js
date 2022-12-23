@@ -1,5 +1,5 @@
 //Object basics 1
-const cat = {
+/* const cat = {
     name : 'Bertie',
     breed : 'Cymric',
     color : 'white',
@@ -11,7 +11,7 @@ const cat = {
 // Put your code here
 let catName = cat['name'];
 cat.greeting();
-cat.color = 'black';
+cat.color = 'black'; */
 // Don't edit the code below here
 
 
@@ -33,3 +33,26 @@ const band = {
 }
 
 let bandInfo = `The band ${band.name} was a group formed in ${band.nationality}, they are considered to be one of the most popular bands in ${band.genre} genre. They were active from ${band.formed} to ${band.split}. They started to be popular with their first album called ${band.albums[0].name} released in ${band.albums[0]['released']}`;
+
+
+//Object basics 3
+const cat = {
+    name : 'Bertie',
+    breed : 'Cymric',
+    color : 'white',
+    greeting: function() {
+      console.log(`Hello, said ${this.name} the ${this.breed}.`);
+    }
+}
+
+const cat2 = {
+    name : 'Fluffy',
+    breed : 'Birman',
+    color : 'Golden',
+    greeting: function() {
+      console.log(`Hello, said ${this.name} the ${this.breed}.`);
+    }
+}
+
+cat.greeting()
+cat2.greeting()
