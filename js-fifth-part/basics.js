@@ -36,7 +36,7 @@ let bandInfo = `The band ${band.name} was a group formed in ${band.nationality},
 
 
 //Object basics 3
-const cat = {
+/* const cat = {
     name : 'Bertie',
     breed : 'Cymric',
     color : 'white',
@@ -55,4 +55,21 @@ const cat2 = {
 }
 
 cat.greeting()
-cat2.greeting()
+cat2.greeting() */
+
+
+//Object basics 4
+function Cat(name, breed, color) {
+    this.name = name,
+    this.breed = breed,
+    this.color = color,
+    this.greeting = function() {
+        console.log(`Hello, said ${ this.name } the ${ this.breed }.`);
+      }
+}
+
+const cat = new Cat('Bertie', 'Cymric', 'white');
+const cat2 = new Cat('Elfie', 'Aphrodite Giant', 'ginger') 
+
+cat.greeting();
+cat2.greeting();
