@@ -33,3 +33,21 @@ for (let prop in salaries) {
     sum += salaries[prop]
 }
 console.log(sum);
+
+
+// Multiply numeric property values by 2
+function multiplyNumeric(obj) {
+    for (let key in obj) {
+        if ((typeof obj[key]) == 'number') {
+            obj[key] *= 2;
+        }
+    }
+}
+
+let menu = {
+    width: 200,
+    height: 300,
+    title: "My menu"
+};
+  
+multiplyNumeric(menu);
