@@ -7,3 +7,7 @@
     width: 200px;
     height: 200px;
 }
+
+.svg-circle:hover + .svg-text-group {
+    opacity: 0;
+  }
