@@ -1,4 +1,9 @@
 .first-svg {
-    width: 400px;
+    width: 200px;
     height: auto;
+}
+.background-svg {
+    background-image: url('./coffee.svg');
+    width: 200px;
+    height: 200px;
 }
