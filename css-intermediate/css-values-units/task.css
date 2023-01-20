@@ -2,7 +2,7 @@ body {
     background-color: #fff;
     color: #333;
     font: 1.2em / 1.5 Helvetica Neue, Helvetica, Arial, sans-serif;
-    padding: 0;
+    padding: 1em;
     margin: 0;
 }
 li {
@@ -35,4 +35,22 @@ ul {
   
   .transparency {
     background-color: rgb(134, 222, 250, 0.6);
-  }
+}
+
+
+/* Second Task */
+h1 {
+    font-size: 50px;
+}
+
+h2 {
+    font-size: 2em;
+}
+
+p {
+    font-size: 16px;
+}
+
+h1+p {
+    font-size: 120%;
+}
