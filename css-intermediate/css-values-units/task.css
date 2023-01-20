@@ -1,0 +1,38 @@
+body {
+    background-color: #fff;
+    color: #333;
+    font: 1.2em / 1.5 Helvetica Neue, Helvetica, Arial, sans-serif;
+    padding: 0;
+    margin: 0;
+}
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+li {
+    margin: 1em;
+    padding: 0.5em;
+}
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* First Task */
+.hex {
+    background-color: #86DEFA;
+  }
+  
+  .rgb {
+    background-color: rgb(134, 222, 250);
+  }
+  
+  .hsl {
+    background-color: hsl(194, 92%, 75%);
+  }
+  
+  .transparency {
+    background-color: rgb(134, 222, 250, 0.6);
+  }
