@@ -1,0 +1,16 @@
+body {
+    font-size: 2rem;
+    /* Use default font of system's interface */
+    font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+/* Use different font-families */
+.raleway {
+    font-family: 'Raleway', sans-serif;
+}
+.titillium {
+    font-family: 'Titillium Web', sans-serif;
+}
+.montserrat {
+    font-family: 'Montserrat', sans-serif;
+}
