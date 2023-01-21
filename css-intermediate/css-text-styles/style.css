@@ -14,3 +14,12 @@ body {
 .montserrat {
     font-family: 'Montserrat', sans-serif;
 }
+
+/* Use Downloaded Font */
+@font-face {
+    font-family: Poppins;
+    src: url(./Poppins/Poppins-Regular.ttf);
+}
+.poppins {
+    font-family: 'Poppins', sans-serif;
+}
