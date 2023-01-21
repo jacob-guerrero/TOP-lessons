@@ -8,6 +8,7 @@ body {
 .raleway {
     font-family: 'Raleway', sans-serif;
 }
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap');
 .titillium {
     font-family: 'Titillium Web', sans-serif;
 }
@@ -23,3 +24,9 @@ body {
 .poppins {
     font-family: 'Poppins', sans-serif;
 }
+
+/* italics */
+h1 {
+    font-style: italic;
+}
+
