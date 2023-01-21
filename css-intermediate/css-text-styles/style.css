@@ -25,8 +25,15 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
-/* italics */
+/* Italics */
 h1 {
     font-style: italic;
 }
 
+/* Letter Spacing */
+.big-spacing {
+    letter-spacing: .5rem;
+}
+.little-spacing {
+    letter-spacing: -.2rem;
+}
