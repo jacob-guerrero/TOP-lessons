@@ -64,3 +64,11 @@ h1 {
 .capitalized {
     text-transform: capitalize;
 }
+
+/* Text Shadow */
+.shadow {
+    text-shadow: #FC0 1px 0 10px;
+}
+.shadow2 {
+    text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
+}
