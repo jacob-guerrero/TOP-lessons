@@ -54,3 +54,13 @@ h1 {
     line-height: 0.9;
 }
 
+/* Text Transform */
+.up-case {
+    text-transform: uppercase;
+}
+.low-case {
+    text-transform: lowercase;
+}
+.capitalized {
+    text-transform: capitalize;
+}
