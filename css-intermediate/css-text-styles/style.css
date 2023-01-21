@@ -37,3 +37,20 @@ h1 {
 .little-spacing {
     letter-spacing: -.2rem;
 }
+
+/* Line Height */
+.container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.container p {
+    max-width: 350px;
+}
+.big-line-height {
+    line-height: 1.5;
+}
+.little-line-height {
+    line-height: 0.9;
+}
+
