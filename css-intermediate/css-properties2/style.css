@@ -1,0 +1,73 @@
+.bg {
+    width: 400px;
+    height: 400px;
+    background-color: #e5e5f7;
+    opacity: 0.5;
+    background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #e5e5f7 10px ), repeating-linear-gradient( #444cf755, #444cf7 );
+    background-size: 100px 100px;
+    background-repeat: repeat;
+    background-attachment: fixed;
+
+    overflow: auto;
+
+    border: 4mm ridge rgba(180, 50, 220, 0.863);
+
+    box-shadow: 20px -12px 2px teal;
+}
+.bg p {
+    font-size: 2rem;
+    opacity: 1;
+}
+
+
+.bg2 {
+    width: 400px;
+    height: 400px;
+    background-image: url('https://images.pexels.com/photos/2662116/pexels-photo-2662116.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    background-size: cover;
+    background-attachment: local;
+    background-origin: content-box;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+
+    overflow: auto;
+
+    border: thick double rgb(64, 156, 40);
+
+    box-shadow: 12px 12px 12px 1px rgba(243, 190, 17, 0.87);
+}
+.bg2 p {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.container {
+    display: flex;
+    width: 400px;
+    height: 200px;
+    justify-content: center;
+    align-items: center;
+}
+.circle {
+    width: 100px;
+    height: 100px;
+    border: dotted;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.solid {
+    width: 20px;
+    height: 20px;
+    border: solid;
+    border-radius: 50%;
+    background-color: #333;
+}
+.left {
+    box-shadow: inset 2px 2px 2px black;
+}
+.right {
+    box-shadow: inset -2px 2px 2px black;
+}
