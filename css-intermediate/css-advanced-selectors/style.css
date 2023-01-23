@@ -24,7 +24,7 @@ main > div > div {
 }
 
 /* Pseudo-class */
-article p:first-child {
+.first-article p:first-child {
     font-size: 120%;
     font-weight: bold;
 }
@@ -38,4 +38,9 @@ a:visited {
 a:hover {
     color:hotpink;
 }   
-    
+
+/* Pseudo-element */
+.second-article p::first-line {
+    font-size: 120%;
+    font-weight: bold;
+}   
