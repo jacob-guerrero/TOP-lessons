@@ -23,3 +23,19 @@ main > div > div {
     /* Our cool CSS */
 }
 
+/* Pseudo-class */
+article p:first-child {
+    font-size: 120%;
+    font-weight: bold;
+}
+
+a:link,
+a:visited {
+    color: rebeccapurple;
+    font-weight: bold;
+}
+
+a:hover {
+    color:hotpink;
+}   
+    
