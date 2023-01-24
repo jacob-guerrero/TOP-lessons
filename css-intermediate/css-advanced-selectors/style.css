@@ -57,3 +57,12 @@ a:hover {
 .box::after {
     content: " ➥"
 }
+
+.box2::before {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 100px;
+    background-color: rebeccapurple;
+    border: 1px solid black;
+}
