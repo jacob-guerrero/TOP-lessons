@@ -1,0 +1,93 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  .box {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    background: red;
+    color: white;
+  }
+  
+  #two {
+    position: relative;
+    top: 20px;
+    left: 20px;
+    background: blue;
+  }
+
+
+
+  p {
+    background: aqua;
+    border: 3px solid blue;
+    padding: 10px;
+    margin: 10px;
+  }
+  
+  span {
+    background: red;
+    border: 1px solid black;
+  }
+  
+  .positioned {
+    position: absolute;
+    background: yellow;
+    top: 240px;
+    left: 30px;
+  }
+
+
+  
+  .box2 {
+    width: 100px;
+    height: 100px;
+    background: red;
+    color: white;
+  }
+
+  #one2 {
+    position: fixed;
+    top: 650px;
+    left: 10px;
+    background: blue;
+  }
+  
+  .outer {
+    width: 500px;
+    height: 300px;
+    overflow: scroll;
+    padding-left: 150px;
+  }
+
+
+
+  dl {
+    width: 500px;
+    height: 300px;
+    overflow-y: auto;
+  }
+  dt {
+    background: #b8c1c8;
+    border-bottom: 1px solid #989ea4;
+    border-top: 1px solid #717d85;
+    color: #fff;
+    font: bold 18px/21px Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 2px 0 0 12px;
+    position: -webkit-sticky;
+    position: sticky;
+    top: -1px;
+  }
+  
+  dd {
+    font: bold 20px/45px Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0 0 0 12px;
+    white-space: nowrap;
+  }
+  
+  dd + dd {
+    border-top: 1px solid #ccc;
+  }
