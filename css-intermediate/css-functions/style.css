@@ -94,3 +94,16 @@ body {
     justify-self: center;
     border: 1px solid gold;
   }
+
+
+
+/* clamp */
+  .element3 {
+    background-color: papayawhip;
+    height: 200px;
+    width: clamp(350px, 50%, 500px);
+    place-content: center;
+    justify-self: center;
+    border: 1px solid gold;
+    display: grid;
+  }
