@@ -81,3 +81,16 @@ body {
     border: 1px solid lightgray;
     padding: 1rem;
   }
+
+
+
+/* max */
+  .element2 {
+    background-color: papayawhip;
+    height: 200px;
+    width: max(50vw, 400px);
+    display: grid;
+    place-content: center;
+    justify-self: center;
+    border: 1px solid gold;
+  }
