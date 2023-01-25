@@ -107,3 +107,8 @@ body {
     border: 1px solid gold;
     display: grid;
   }
+
+
+  .fluid {
+    font-size: clamp(1.5rem, 5vw, 3rem);
+  }
