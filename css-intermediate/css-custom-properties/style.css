@@ -1,0 +1,12 @@
+
+.fallback {
+    width: 200px;
+    height: 100px;
+
+    --color-text: blue; /* Declares custom properties */
+    --color-box: lightblue;
+    
+    background-color: var(--color-box);
+    color: var(--color-text2, var(--color-text3, var(--color-text, black))); /* Uses fall-back values*/
+}
+
