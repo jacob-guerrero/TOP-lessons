@@ -7,6 +7,30 @@
     --color-box: lightblue;
     
     background-color: var(--color-box);
-    color: var(--color-text2, var(--color-text3, var(--color-text, black))); /* Uses fall-back values*/
+    color: var(--color-text2, var(--color-text3, var(--color-text, black))); /* Uses fallback values*/
 }
 
+
+/* Scope */
+
+.cool-div {
+    --main-bg: red;
+}
+.cool-paragraph {
+background-color: var(--main-bg);
+}
+.boring-paragraph {
+background-color: var(--main-bg);
+}
+
+:root {
+--main-color: red;
+}
+
+.cool-paragraph2 {
+color: var(--main-color);
+}
+
+.exciting-paragraph {
+background-color: var(--main-color);
+}
