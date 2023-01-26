@@ -1,13 +1,17 @@
 
 .fallback {
-    width: 200px;
+    width: 500px;
     height: 100px;
 
     --color-text: blue; /* Declares custom properties */
     --color-box: lightblue;
+    --modal-font-size: calc(2rem - 5px);
     
     background-color: var(--color-box);
     color: var(--color-text2, var(--color-text3, var(--color-text, black))); /* Uses fallback values*/
+
+    border: var(--modal-border);
+    font-size: var(--modal-font-size, 2rem);
 }
 
 
@@ -33,4 +37,59 @@ color: var(--main-color);
 
 .exciting-paragraph {
 background-color: var(--main-color);
+}
+
+
+/* Themes with custom properties */
+:root.dark {
+    --modal-border: 2px dashed white;
+
+    --border-btn: 1px solid rgb(220, 220, 220);
+    --color-base-bg: rgb(18, 18, 18);
+    --color-base-text: rgb(240, 240, 240);
+    --color-btn-bg: rgb(36, 36, 36);
+}
+
+:root.light {
+    --modal-border: 2px dotted black;
+
+    --border-btn: 1px solid rgb(36, 36, 36);
+    --color-base-bg: rgb(240, 240, 240);
+    --color-base-text: rgb(18, 18, 18);
+    --color-btn-bg: rgb(220, 220, 220);
+}
+
+body,
+    .theme-toggle {
+    color: var(--color-base-text);
+}
+
+body {
+    background-color: var(--color-base-bg);
+    padding: 10px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+p {
+    font-size: 1.5rem;
+}
+
+.theme-toggle {
+    background-color: var(--color-btn-bg);
+    border: var(--border-btn);
+    font-size: 1.125rem;
+    padding: 10px 20px;
+}
+
+.theme-toggle:hover {
+    cursor: pointer;
+}
+
+.theme-toggle:focus {
+    outline: var(--border-btn);
 }
