@@ -71,9 +71,6 @@
       }
 
 
-      input + span {
-        position: relative;
-      }
 
       input + span::before {
         position: absolute;
@@ -93,6 +90,30 @@
       input:valid + span::before {
         content: "✓";
         color: green;
+      }
+
+
+
+      input + span::after {
+        font-size: 0.7rem;
+        position: absolute;
+        padding: 5px 10px;
+        top: -26px;
+      }
+
+      input:required + span::after {
+        color: white;
+        background-color: black;
+        content: "Required";
+        left: -70px;
+      }
+
+      input:out-of-range + span::after {
+        color: white;
+        background-color: red;
+        width: 155px;
+        content: "Outside allowable value range";
+        left: -182px;
       }
 
     </style>
@@ -118,6 +139,12 @@
           <label for="email">Email address (include if you want a response): </label>
           <input id="email" name="email" type="email">
           <span></span>
+        </div>
+
+        <div>
+            <label for="age">Age (must be 12+): </label>
+            <input id="age" name="age" type="number" min="12" max="120" required />
+            <span></span>
         </div>
         <div><button>Submit</button></div>
       </fieldset>
