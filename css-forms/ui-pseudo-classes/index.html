@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UI pseudo-classes</title>
+    <style>
+        input:required {
+           border: 1px solid black;
+        }
+
+        input:optional {
+            border: 1px solid silver;
+        }
+
+
+
+        #radio1 {
+            display: block;
+            margin-inline-start: 2px;
+            margin-inline-end: 2px;
+            padding-block-start: 0.35em;
+            padding-inline-start: 0.75em;
+            padding-inline-end: 0.75em;
+            padding-block-end: 0.625em;
+            min-inline-size: min-content;
+            border-width: 2px;
+            border-style: groove;
+            border-color: rgb(192, 192, 192);
+            border-image: initial;
+        }
+        .radio-opt {
+            display: block;
+            margin-block-start: 1em;
+            margin-block-end: 1em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+        }
+        input[type="radio"] {
+            width: 20px;
+            height: 20px;
+            border-radius: 10px;
+            border: 2px solid gray;
+            vertical-align: -2px;
+            outline: none;
+        }
+        input[type="radio"] {
+            appearance: none;
+        }
+        input[type="radio"]::before {
+            display: block;
+            content: " ";
+            width: 10px;
+            height: 10px;
+            border-radius: 6px;
+            background-color: red;
+            font-size: 1.2em;
+            transform: translate(3px, 3px) scale(0);
+            transform-origin: center;
+            transition: all 0.3s ease-in;
+        }
+
+        input[type="radio"]:checked::before {
+            transform: translate(3px, 3px) scale(1);
+            transition: all 0.3s cubic-bezier(0.25, 0.25, 0.56, 2);
+        }
+
+    </style>
+</head>
+<body>
+    <form>
+        <fieldset>
+          <legend>Feedback form</legend>
+          <div>
+            <label for="fname">First name: </label>
+            <input id="fname" name="fname" type="text" required />
+          </div>
+          <div>
+            <label for="lname">Last name: </label>
+            <input id="lname" name="lname" type="text" required />
+          </div>
+          <div>
+            <label for="email">
+              Email address (include if you want a response):
+            </label>
+            <input id="email" name="email" type="email" />
+          </div>
+          <div><button>Submit</button></div>
+        </fieldset>
+
+
+        <fieldset id="radio1">
+            <legend>Choose your favorite fruit</legend>
+      
+            <p class="radio-opt">
+              <label>
+                <input type="radio" name="fruit" value="cherry">
+                Cherry
+              </label>
+            </p>
+            <p class="radio-opt">
+              <label>
+                <input type="radio" name="fruit" value="banana">
+                Banana
+              </label>
+            </p>
+            <p class="radio-opt">
+              <label>
+                <input type="radio" name="fruit" value="strawberry">
+                Strawberry
+              </label>
+            </p>
+        </fieldset>
+    </form>      
+</body>
+</html>
