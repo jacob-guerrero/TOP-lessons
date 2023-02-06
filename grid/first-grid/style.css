@@ -1,0 +1,5 @@
+.container {
+    display: grid;
+
+    grid-template: 50px 50px / 50px 50px 50px; /* rows defined before the slash and columns are defined after the slash */
+}
