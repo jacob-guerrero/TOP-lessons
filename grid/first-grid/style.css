@@ -1,5 +1,10 @@
 .container {
     display: grid;
 
-    grid-template: 50px 50px / 50px 50px 50px; /* rows defined before the slash and columns are defined after the slash */
+    grid-template: 50px 50px / 50px 50px; /* rows defined before the slash and columns are defined after the slash */
+
+    /* grid-template: 50px 50px / 250px 50px 50px; */ /* columns and rows don't have to share all the same value either. */
+
+    grid-auto-rows: 50px; /* Define value for any new track (implicit row) */
+
 }
