@@ -30,11 +30,10 @@ const theHobbit = new Book(
 );
 console.log(theHobbit.info());
 
-
 // ---------------
 
 // Using Prototypes
-function Student(name, grade) {
+/* function Student(name, grade) {
   this.name = name;
   this.grade = grade;
 }
@@ -44,4 +43,42 @@ Student.prototype.sayName = function () {
 };
 Student.prototype.goToProm = function () {
   console.log("Eh.. go to prom?");
+}; */
+
+// Inherited Prototype
+function Student() {}
+
+Student.prototype.sayName = function () {
+  console.log(this.name);
 };
+Student.prototype.sayGrade = function () {
+  console.log(this.grade);
+};
+
+function EighthGrader(name) {
+  this.name = name;
+  this.grade = 8;
+}
+
+// Using Object.create!!
+EighthGrader.prototype = Object.create(Student.prototype);
+
+function NinthGrader(name) {
+  this.name = name;
+  this.grade = 9;
+}
+
+// Use it again to ninth grader!
+NinthGrader.prototype = Object.create(Student.prototype);
+
+NinthGrader.prototype.sayName = function () {
+  console.log("HAHAHAHAHAHA");
+};
+
+const carl = new EighthGrader("carl");
+carl.sayName();
+carl.sayGrade();
+
+const lucy = new NinthGrader("lucy");
+lucy.sayName();
+lucy.sayGrade();
