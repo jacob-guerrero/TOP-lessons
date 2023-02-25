@@ -163,3 +163,35 @@ console.log(boundGetNumbers()); // => [3, 5, 10]
 // Extract method from object
 const simpleGetNumbers = numbers.getNumbers;
 console.log(simpleGetNumbers()); // => undefined or throws an error in strict mode
+
+// ----------------
+
+/* Arrow Functions and This */
+class Point {
+  constructor(x, y) {
+    this.x = x;
+    this.y = y;
+  }
+
+  log() {
+    console.log(this === myPoint); // => true
+    setTimeout(() => {
+      console.log(this === myPoint); // => true
+      console.log(this.x + ":" + this.y); // => '95:165'
+    }, 1000);
+  }
+}
+const myPoint = new Point(95, 165);
+myPoint.log();
+
+// Note: don't define methods with an arrow function bc context (= window):
+function Period(hours, minutes) {
+  this.hours = hours;
+  this.minutes = minutes;
+}
+Period.prototype.format = function () {
+  console.log(this === walkPeriod); // => true
+  return this.hours + " hours and " + this.minutes + " minutes";
+};
+const walkPeriod = new Period(2, 30);
+walkPeriod.format(); // => '2 hours and 30 minutes'
