@@ -81,3 +81,21 @@ const myCat = new Pet("Cat", 4);
 // logs "The Cat has 4 legs"
 setTimeout(myCat.logInfo, 1000);
 // myCat.logInfo returns a new function that executes exactly like logInfo, but has this as myCat, even in a function invocation.
+
+// -----------
+
+/* Constructor Invocation */
+function Country(name, traveled) {
+  this.name = name ? name : "United Kingdom";
+  this.traveled = Boolean(traveled); // transform to a boolean
+}
+Country.prototype.travel = function () {
+  this.traveled = true;
+};
+// Constructor invocation
+const france = new Country("France", false);
+// Constructor invocation
+const unitedKingdom = new Country();
+france.travel(); // Travel to France
+console.log(france);
+console.log(unitedKingdom);
