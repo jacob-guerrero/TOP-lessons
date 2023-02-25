@@ -99,3 +99,13 @@ const unitedKingdom = new Country();
 france.travel(); // Travel to France
 console.log(france);
 console.log(unitedKingdom);
+
+// Using this
+function Foo() {
+  // this is fooInstance
+  this.property = "Default Value";
+}
+// Constructor invocation
+const fooInstance = new Foo();
+fooInstance.property; // => 'Default Value'
+console.log(fooInstance)
