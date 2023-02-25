@@ -97,8 +97,8 @@ const france = new Country("France", false);
 // Constructor invocation
 const unitedKingdom = new Country();
 france.travel(); // Travel to France
-console.log(france);
-console.log(unitedKingdom);
+console.log(france.traveled);
+console.log(unitedKingdom.traveled);
 
 // Using this
 function Foo() {
@@ -108,4 +108,30 @@ function Foo() {
 // Constructor invocation
 const fooInstance = new Foo();
 fooInstance.property; // => 'Default Value'
-console.log(fooInstance)
+console.log(fooInstance.property);
+
+// -------
+
+/* Indirect Invocation */
+// It uses call or apply methods to call functions
+// First arg = context, next args = passed as args to the called function
+function sum(number1, number2) {
+  return number1 + number2;
+}
+console.log(sum.call(undefined, 10, 2)); // => 12
+console.log(sum.apply(undefined, [10, 2])); // => 12
+
+// Using this
+function Runner(name) {
+  console.log(this instanceof Rabbit); // => true
+  this.name = name;
+}
+function Rabbit(name, countLegs) {
+  console.log(this instanceof Rabbit); // => true
+  // Indirect invocation. Call parent constructor.
+  Runner.call(this, name);
+  this.countLegs = countLegs;
+}
+const myRabbit = new Rabbit("White Rabbit", 4);
+console.log(myRabbit); // { name: 'White Rabbit', countLegs: 4 }
+
