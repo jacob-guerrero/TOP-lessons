@@ -135,3 +135,31 @@ function Rabbit(name, countLegs) {
 const myRabbit = new Rabbit("White Rabbit", 4);
 console.log(myRabbit); // { name: 'White Rabbit', countLegs: 4 }
 
+// -------
+
+/* Bound Function */
+// It uses bind method = original and bound fun share same code and scope
+// First arg = context, then we've an optional list of arguments
+function multiply(number) {
+  "use strict";
+  return this * number;
+}
+// create a bound function with context
+const double = multiply.bind(2);
+// invoke the bound function
+console.log(double(3)); // => 6
+console.log(double(10)); // => 20
+
+// Using this
+const numbers = {
+  array: [3, 5, 10],
+  getNumbers() {
+    return this.array;
+  },
+};
+// Create a bound function
+const boundGetNumbers = numbers.getNumbers.bind(numbers);
+console.log(boundGetNumbers()); // => [3, 5, 10]
+// Extract method from object
+const simpleGetNumbers = numbers.getNumbers;
+console.log(simpleGetNumbers()); // => undefined or throws an error in strict mode
