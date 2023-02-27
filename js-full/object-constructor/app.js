@@ -82,3 +82,19 @@ carl.sayGrade();
 const lucy = new NinthGrader("lucy");
 lucy.sayName();
 lucy.sayGrade();
+
+// ---------
+
+/* Creating a Constructor, and prototype */
+function MyConstr(title, name) {
+  this.title = title;
+  this.name = name;
+}
+
+MyConstr.prototype.sayAll = function () {
+  return `He is ${this.name}, a ${this.title}.`;
+};
+
+const person1 = new MyConstr("lawyer", "Bill");
+console.log(person1.name);
+console.log(person1.sayAll());
