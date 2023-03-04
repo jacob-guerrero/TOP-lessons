@@ -48,3 +48,13 @@ const scope1 = function () {
     };
   };
 };
+
+/* Closures */
+const sayHello = function (name) {
+  let text = "Hello, " + name;
+  return function () {
+    console.log(text);
+  };
+};
+// The function returns a function, which means it needs assignment, and then calling, but we can do:
+sayHello("Bob")(); // calls the returned function without assignment
