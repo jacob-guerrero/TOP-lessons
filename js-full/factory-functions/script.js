@@ -30,13 +30,13 @@ console.log(a); // 98 Bc we changed the global value of a
 
 /* Lexical scope */
 // Scope A
-const myFunction = function () {
+/* const myFunction = function () {
   // Scope B
   let name = "Todd"; // defined in Scope B
   let myOtherFunction = function () {
     // Scope C: `name` is accessible here!
   };
-};
+}; */
 /* Lexical scope doesn't work backwards */
 // name = undefined
 const scope1 = function () {
@@ -79,3 +79,55 @@ for (let i = 0; i < links.length; i++) {
   }).call(links[i]);
 }
 // Without the function and the .call(), 'this' is the object window
+
+/* Private and Public scope */
+// Creating Private scope:
+(function () {
+  const myFunction = function () {
+    // My function is a private function
+    // do some stuff here
+  };
+})();
+// Module Pattern, it is used to scope functions using private and public scope and an Object:
+// define module
+const Module = (function () {
+  // This is how we can create private scope by not returning functions.
+  const _privateMethod = function () {
+    // This is a private function
+  };
+  // These privately scoped functions are things like helpers, addClass, removeClass, Ajax/XHR calls, Arrays, Objects, anything.
+  return {
+    // The return statement here is what returns public methods
+    myMethod: function () {
+      console.log("myMethod has been called.");
+    },
+    someOtherMethod: function () {
+      // We can add as many methods as we want
+    },
+  };
+})();
+// call module + methods
+Module.myMethod();
+Module.someOtherMethod();
+
+// Anything ins the same scope has access to anything in the same scope:
+const Module2 = (function () {
+  let privateMethod = function () {};
+  return {
+    publicMethod: function () {
+      // has access to `privateMethod`, we can call it:
+      // privateMethod();
+    },
+  };
+})();
+
+// Returning an Object making use of public and private methods:
+const Module3 = (function () {
+  const myModule = {};
+  const privateMethod = function () {};
+  myModule.publicMethod = function () {};
+  myModule.anotherPublicMethod = function () {};
+  return myModule; // returns the Object with public methods
+})();
+// usage
+Module.publicMethod();
