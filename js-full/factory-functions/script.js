@@ -60,7 +60,7 @@ const sayHello = function (name) {
 console.log(sayHello("Bob")()); // calls the returned function without assignment
 
 /* Scope and this */
-const nav = document.querySelector(".nav"); // <nav class="nav">
+/* const nav = document.querySelector(".nav"); // <nav class="nav">
 const toggleNav = function () {
   const that = this;
   console.log(that); // <nav> element
@@ -68,16 +68,16 @@ const toggleNav = function () {
     console.log(that); // <nav> element
   }, 1000);
 };
-nav.addEventListener("click", toggleNav, false);
+nav.addEventListener("click", toggleNav, false); */
 // Using "that" we can cache a reference and refer to the lexical binding
 
 /* Changing Scope with call(), apply() and bind() */
-const links = document.querySelectorAll("nav li");
+/* const links = document.querySelectorAll("nav li");
 for (let i = 0; i < links.length; i++) {
   (function () {
     console.log(this);
   }).call(links[i]);
-}
+} */
 // Without the function and the .call(), 'this' is the object window
 
 /* Private and Public scope */
@@ -133,13 +133,13 @@ const Module3 = (function () {
 Module3.publicMethod();
 
 /* Private variables and functions */
-const FactoryFunction = string => {
+const FactoryFunction = (string) => {
   const capitalizeString = () => string.toUpperCase();
   const printString = () => console.log(`----${capitalizeString()}----`);
   return { printString };
 };
 
-const taco = FactoryFunction('taco');
+const taco = FactoryFunction("taco");
 
 // printString(); // ERROR!!
 // capitalizeString(); // ERROR!!
@@ -154,10 +154,63 @@ const counterCreator = () => {
     count++;
   };
 };
-
 const counter = counterCreator();
-
 counter(); // 0
 counter(); // 1
 counter(); // 2
 counter(); // 3
+
+/* More Factory Functions (examples)  */
+const Player = (name, level) => {
+  let health = level * 2;
+  const getLevel = () => level;
+  const getName = () => name;
+  const die = () => {
+    // uh oh
+  };
+  const damage = (x) => {
+    health -= x;
+    if (health <= 0) {
+      die();
+    }
+  };
+  const attack = (enemy) => {
+    if (level < enemy.getLevel()) {
+      damage(1);
+      console.log(`${enemy.getName()} has damaged ${name}`);
+    }
+    if (level >= enemy.getLevel()) {
+      enemy.damage(1);
+      console.log(`${name} has damaged ${enemy.getName()}`);
+    }
+  };
+  return { attack, damage, getLevel, getName };
+};
+
+const jimmie = Player("jim", 10);
+const badGuy = Player("jeff", 5);
+jimmie.attack(badGuy);
+
+/* Inheritance with factories */
+const Person = (name) => {
+  const sayName = () => console.log(`my name is ${name}`);
+  return { sayName };
+};
+
+const Nerd = (name) => {
+  // simply create a person and pull out the sayName function with destructuring assignment syntax!
+  const { sayName } = Person(name);
+  const doSomethingNerdy = () => console.log("nerd stuff");
+  return { sayName, doSomethingNerdy };
+};
+
+const jef = Nerd("jef");
+jef.sayName(); // my name is jef
+jef.doSomethingNerdy(); // nerd stuff
+
+// Another way to lump ALL of another object in: (Object.assign)
+/* const Nerd = (name) => {
+  const prototype = Person(name);
+  const doSomethingNerdy = () => console.log('nerd stuff');
+  return Object.assign({}, prototype, {doSomethingNerdy});
+} */
