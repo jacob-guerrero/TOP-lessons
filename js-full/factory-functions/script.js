@@ -51,10 +51,31 @@ const scope1 = function () {
 
 /* Closures */
 const sayHello = function (name) {
-  let text = "Hello, " + name;
+  let text = `Hello, ${name}`;
   return function () {
     console.log(text);
   };
 };
 // The function returns a function, which means it needs assignment, and then calling, but we can do:
-sayHello("Bob")(); // calls the returned function without assignment
+console.log(sayHello("Bob")()); // calls the returned function without assignment
+
+/* Scope and this */
+const nav = document.querySelector(".nav"); // <nav class="nav">
+const toggleNav = function () {
+  const that = this;
+  console.log(that); // <nav> element
+  setTimeout(function () {
+    console.log(that); // <nav> element
+  }, 1000);
+};
+nav.addEventListener("click", toggleNav, false);
+// Using "that" we can cache a reference and refer to the lexical binding
+
+/* Changing Scope with call(), apply() and bind() */
+const links = document.querySelectorAll("nav li");
+for (let i = 0; i < links.length; i++) {
+  (function () {
+    console.log(this);
+  }).call(links[i]);
+}
+// Without the function and the .call(), 'this' is the object window
