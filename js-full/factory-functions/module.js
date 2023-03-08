@@ -85,3 +85,32 @@ myModule3.publicMethod(); // outputs 'Hello World'
 console.log(myModule3.publicProperty); // outputs 'I am a public property'
 // console.log(myModule3._privateProperty); // is undefined protected by the module closure
 // myModule3._privateMethod(); // is TypeError protected by the module closure
+
+/* Another example */
+const Formatter = (function () {
+  let timesRun = 0;
+
+  const log = (message) => console.log(`[${Date.now()}] Logger: ${message}`);
+  const setTimesRun = () => {
+    log("Setting times run");
+    ++timesRun;
+  };
+
+  const makeUppercase = (text) => {
+    log("Making uppercase");
+    setTimesRun();
+    return text.toUpperCase();
+  };
+
+  return {
+    makeUppercase,
+    timesRun,
+  };
+})();
+console.log(Formatter.makeUppercase("tomek"));
+console.log(Formatter.makeUppercase("tomek"));
+console.log(Formatter.makeUppercase("tomek"));
+
+console.log(Formatter.timesRun);
+Formatter.timesRun = 10; // Drawback: everything publicly exposed can be changed from the outside
+console.log(Formatter.timesRun);
