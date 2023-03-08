@@ -114,3 +114,14 @@ console.log(Formatter.makeUppercase("tomek"));
 console.log(Formatter.timesRun);
 Formatter.timesRun = 10; // Drawback: everything publicly exposed can be changed from the outside
 console.log(Formatter.timesRun);
+
+/* Knowledge Check */
+const myFactory = (name, age) => {
+  const introduce = () =>
+    console.log(`Hello my name is ${name}, i'm ${age} yo`);
+  return { name, age , introduce};
+};
+const peter = myFactory('Peter', 28);
+console.log(peter);
+peter.introduce();
+
