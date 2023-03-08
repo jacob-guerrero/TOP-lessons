@@ -119,9 +119,26 @@ console.log(Formatter.timesRun);
 const myFactory = (name, age) => {
   const introduce = () =>
     console.log(`Hello my name is ${name}, i'm ${age} yo`);
-  return { name, age , introduce};
+  return { name, age, introduce };
 };
-const peter = myFactory('Peter', 28);
+const peter = myFactory("Peter", 28);
 console.log(peter);
 peter.introduce();
 
+// Inheritance:
+const myInheritance = (name, age) => {
+  const { introduce } = myFactory(name, age);
+  // const prototype = myFactory(name, age);
+  const calcBornDate = () => {
+    const year = new Date().getFullYear();
+    return year - age;
+  };
+  const sayBornDate = () => console.log(`I was born in ${calcBornDate()}`);
+  return { introduce, sayBornDate };
+  // return Object.assign({}, prototype, {sayBornDate}); // To copy all enumerable own properties from "myFactory"
+};
+
+const parker = myInheritance("Parker", 18);
+console.log(parker);
+parker.introduce();
+parker.sayBornDate();
