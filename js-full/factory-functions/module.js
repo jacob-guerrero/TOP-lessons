@@ -44,7 +44,6 @@ myModule.publicMethod(); // outputs 'Hello World'
 
 // Private methods and properties
 const myModule2 = (function () {
-
   const _privateProperty = "Hello World";
 
   function _privateMethod() {
@@ -61,3 +60,28 @@ const myModule2 = (function () {
 myModule2.publicMethod(); // outputs 'Hello World'
 // console.log(myModule2._privateProperty); // is undefined protected by the module closure
 // myModule2._privateMethod(); // is TypeError protected by the module closure
+
+/* Revealing Module Pattern */
+// This reveals only methods or properties we want to be publicly
+const myModule3 = (function () {
+  const _privateProperty = "Hello World";
+  const publicProperty = "I am a public property";
+
+  function _privateMethod() {
+    console.log(_privateProperty);
+  }
+
+  function publicMethod() {
+    _privateMethod();
+  }
+
+  return {
+    publicMethod: publicMethod,
+    publicProperty: publicProperty,
+  };
+})();
+
+myModule3.publicMethod(); // outputs 'Hello World'
+console.log(myModule3.publicProperty); // outputs 'I am a public property'
+// console.log(myModule3._privateProperty); // is undefined protected by the module closure
+// myModule3._privateMethod(); // is TypeError protected by the module closure
