@@ -62,3 +62,12 @@ class User {
 // Usage:
 let userClass = new User("John");
 userClass.sayHi();
+
+/* Classes expressions */
+let UserNamedClass = class MyClass {
+  sayHi() {
+    console.log(MyClass);
+  }
+};
+new UserNamedClass().sayHi();
+// console.log(MyClass); // Doesn't work because MyClass it's visible only inside the class
