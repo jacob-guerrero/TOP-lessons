@@ -1,3 +1,4 @@
+/* Getters and Setters */
 let obj = {
   get propName() {
     // getter, the code executed on getting obj.propName
@@ -44,3 +45,20 @@ Object.defineProperty(user2, "fullName", {
 // Note that a property can be either an accessor or a data property, not both.
 console.log(user2.fullName); // John Smith
 for (let key in user2) console.log(key); // name, surname
+
+// ---------------
+
+/* First Basic Class Example */
+class User {
+  constructor(name) {
+    this.name = name;
+  }
+
+  sayHi() {
+    console.log(this.name);
+  }
+}
+
+// Usage:
+let userClass = new User("John");
+userClass.sayHi();
