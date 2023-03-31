@@ -99,3 +99,15 @@ console.log(userGS.name); // John
 
 user = new UserGS(""); // Name is too short.
 
+// Class Fields
+// It allows to add properties on individual objects, not UserCF.prototype
+class UserCF {
+  name = "JohnCF";
+
+  sayHi() {
+    console.log(`Hello, ${this.name}!`);
+  }
+}
+
+new UserCF().sayHi(); // Hello, JohnCF!
+ // Console.log(UserCF.prototype.name) // Undefined
