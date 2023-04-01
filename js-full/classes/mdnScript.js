@@ -45,3 +45,21 @@ class Animal {
   // Fuzzy makes a noise.
   // Fuzzy roars.
   
+  /* Extending plain objects */
+  const AnimalPO = {
+    speak() {
+      console.log(`${this.name} makes a noise.`);
+    },
+  };
+  
+  class DogPO {
+    constructor(name) {
+      this.name = name;
+    }
+  }
+  
+  Object.setPrototypeOf(DogPO.prototype, AnimalPO);
+  
+  const dPO = new DogPO("Mitzie");
+  dPO.speak(); // Mitzie makes a noise.
+  
