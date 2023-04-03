@@ -79,3 +79,29 @@ const randomizerMixin = (Base) =>
 // Using the mixins:
 class Foo {}
 class Bar extends calculatorMixin(randomizerMixin(Foo)) {}
+
+// -------
+
+/* Composition over inheritance */
+const barker = (state) => ({
+  bark: () => console.log("Woof, I am " + state.name),
+});
+
+const driver = (state) => ({
+  drive: () => (state.position = state.position + state.speed),
+});
+
+const killer = (state) => ({
+  kill: () => console.log("Woof, I kill at " + state.position),
+});
+
+const murderRobotDog = (name) => {
+  let state = {
+    name,
+    speed: 100,
+    position: 0,
+  };
+  return Object.assign({}, barker(state), driver(state), killer(state));
+};
+
+murderRobotDog("Sniffles").bark();
