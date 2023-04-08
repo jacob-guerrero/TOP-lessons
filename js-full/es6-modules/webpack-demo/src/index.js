@@ -1,5 +1,6 @@
 // Import new Function
 import myName from "./myName";
+import { functionOne, functionTwo } from "./myModule";
 
 import _ from "lodash";
 function component() {
