@@ -1,6 +1,7 @@
 // Import new Function
 import myName from "./myName";
 import { functionOne, functionTwo } from "./myModule";
+import './style.css';
 
 import _ from "lodash";
 function component() {
@@ -8,6 +9,7 @@ function component() {
 
   // Lodash, now imported by this script
   element.innerHTML = _.join(["Hello", "webpack"], " ");
+  element.classList.add('hello');
 
   const elementName = document.createElement("div");
   elementName.textContent = myName("Cody");
