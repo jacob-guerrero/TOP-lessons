@@ -3,9 +3,21 @@ import myName from "./myName";
 import { functionOne, functionTwo } from "./myModule";
 import './style.css';
 /* import Icon from './icon.png'; */
-import BackG from './bg.png';
-import Data from './data.xml';
-import Notes from './data.csv';
+import BackG from './bg.png'; // Background
+import Data from './data.xml'; // Data
+import Notes from './data.csv'; // Data
+import toml from './data.toml'; // Custom parser
+import yaml from './data.yaml'; // Custom parser
+import json from './data.json5'; // Custom parser
+
+console.log(toml.title); // output `TOML Example`
+console.log(toml.owner.name); // output `Tom Preston-Werner`
+
+console.log(yaml.title); // output `YAML Example`
+console.log(yaml.owner.name); // output `Tom Preston-Werner`
+
+console.log(json.title); // output `JSON5 Example`
+console.log(json.owner.name); // output `Tom Preston-Werner`
 
 import _ from "lodash";
 function component() {
