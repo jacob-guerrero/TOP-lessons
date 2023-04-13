@@ -4,6 +4,8 @@ import { functionOne, functionTwo } from "./myModule";
 import './style.css';
 /* import Icon from './icon.png'; */
 import BackG from './bg.png';
+import Data from './data.xml';
+import Notes from './data.csv';
 
 import _ from "lodash";
 function component() {
@@ -24,6 +26,9 @@ function component() {
   const myBg = new Image();
   myBg.src = BackG;
   element.appendChild(myBg);
+
+  console.log(Data);
+  console.log(Notes);
 
   return { element, elementName };
 }
