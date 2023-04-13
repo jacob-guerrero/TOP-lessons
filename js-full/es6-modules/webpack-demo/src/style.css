@@ -1,5 +1,24 @@
+@font-face {
+    font-family: 'MyFont';
+    src: url('./Poppins-Regular.ttf');
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'MyDancingFont';
+    src: url('./DancingScript-Regular.ttf');
+    font-weight: 600;
+    font-style: normal;
+}
+
 .hello {
     color: red;
     /* background: url('./icon.png'); */
+    font-family: 'MyFont';
     background: url('./bg.png');
+}
+
+.intro {
+    color: black;
+    font-family: 'MyDancingFont';
 }

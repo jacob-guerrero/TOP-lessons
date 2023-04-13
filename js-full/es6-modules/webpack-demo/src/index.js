@@ -15,6 +15,7 @@ function component() {
 
   const elementName = document.createElement("div");
   elementName.textContent = myName("Cody");
+  elementName.classList.add('intro');
 
   // Add the image to our existing div.
   /* const myIcon = new Image();
