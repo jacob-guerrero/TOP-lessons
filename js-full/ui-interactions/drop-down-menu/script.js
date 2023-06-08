@@ -5,3 +5,15 @@ elements.forEach((item) => {
     item.classList.toggle("active");
   });
 });
+
+const updateContent = () => {
+  const footer = document.querySelector(".footer");
+  if(window.innerWidth < 350) {
+    footer.classList.add("active");
+  } else {
+    footer.classList.remove("active");
+  }
+}
+
+window.addEventListener("resize", updateContent);
+updateContent();
