@@ -32,6 +32,14 @@ h1, h2, h3, p {
     margin: 0;  
 }
 
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+
 ul {
     list-style-type: none;
     margin: 0;
@@ -57,8 +65,9 @@ a {
 }
 .container {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, minmax(max-content, 1fr));
     grid-template-rows: 1fr;
+    gap: 1rem;
 }
 .elements .nav-title {
     text-align: center;
@@ -72,6 +81,7 @@ a {
 }
 .list {
     max-height: 0px;
+    min-width: max-content;
     overflow: hidden;
     position: absolute;
     left: 10%;
