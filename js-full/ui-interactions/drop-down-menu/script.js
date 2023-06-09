@@ -30,3 +30,13 @@ const nextPicture = () => {
     pictures[index].classList.add("show");
   }
 };
+const previousPicture = () => {
+  index -= 1;
+  if (index < 0) {
+    index = pictures.length - 1;
+  }
+  if (index >= 0) {
+    document.querySelector(".show").classList.remove("show");
+    pictures[index].classList.add("show");
+  }
+}
