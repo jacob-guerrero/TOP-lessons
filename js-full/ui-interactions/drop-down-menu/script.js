@@ -8,12 +8,25 @@ elements.forEach((item) => {
 
 const updateContent = () => {
   const footer = document.querySelector(".footer");
-  if(window.innerWidth < 350) {
+  if (window.innerWidth < 350) {
     footer.classList.add("active");
   } else {
     footer.classList.remove("active");
   }
-}
+};
 
 window.addEventListener("resize", updateContent);
 updateContent();
+
+const pictures = document.querySelectorAll(".picture");
+let index = 0;
+const nextPicture = () => {
+  index += 1;
+  if (index >= pictures.length) {
+    index = 0;
+  }
+  if (index < pictures.length) {
+    document.querySelector(".show").classList.remove("show");
+    pictures[index].classList.add("show");
+  }
+};
