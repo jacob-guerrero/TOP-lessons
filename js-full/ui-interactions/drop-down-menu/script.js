@@ -46,3 +46,6 @@ const slider = (() => {
   };
   return { nextPicture, previousPicture}
 })();
+
+document.querySelector('.arrow-left').onclick = slider.previousPicture;
+document.querySelector('.arrow-right').onclick = slider.nextPicture;
