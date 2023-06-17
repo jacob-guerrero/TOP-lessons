@@ -49,3 +49,22 @@ const slider = (() => {
 
 document.querySelector('.arrow-left').onclick = slider.previousPicture;
 document.querySelector('.arrow-right').onclick = slider.nextPicture;
+
+const navDots = () => {
+  const numImg = document.querySelectorAll('.picture');
+  const collageContainer = document.querySelector('.collage');
+  const rightArrow = document.querySelector('.arrow-right');
+
+  const circleContainer = document.createElement('div');
+  circleContainer.classList.add("circle-container")
+  collageContainer.insertBefore(circleContainer, rightArrow);
+
+  for (let i = 0; i < numImg.length; i++) {
+    const circle = document.createElement("div");
+    circle.dataset.circleId = i;
+    circle.classList.add("circle")
+    circleContainer.append(circle);
+  }
+}
+
+navDots();

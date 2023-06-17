@@ -128,15 +128,18 @@ header {
 /* Main */
 .main-content {
     width: 100%;
-}
-.collage {
-    position: relative;
-    width: 100%;
     height: calc(100% - 62px);
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+}
+.collage {
+    position: relative;
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .arrow-left, .arrow-right {
     position: absolute;
@@ -166,6 +169,18 @@ header {
 .picture.show {
     width: 80%;
     max-width: 700px;
+}
+
+.circle-container {
+    display: flex;
+    gap: 4px;
+}
+.circle {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--gray-second);
+    cursor: pointer;
 }
 
 /* Footer */
