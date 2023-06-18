@@ -182,6 +182,9 @@ header {
     background-color: var(--gray-second);
     cursor: pointer;
 }
+.selected {
+    background-color: var(--main-color);
+}
 
 /* Footer */
 .footer {

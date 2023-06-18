@@ -20,6 +20,7 @@ updateContent();
 
 const slider = (() => {
   const pictures = document.querySelectorAll(".picture");
+  const circles = document.querySelectorAll(".circle");
   let index = 0;
 
   const nextPicture = () => {
@@ -31,6 +32,9 @@ const slider = (() => {
     if (index < pictures.length) {
       document.querySelector(".show").classList.remove("show");
       pictures[index].classList.add("show");
+
+      document.querySelector(".selected").classList.remove("selected");
+      selectCircle();
     }
   };
   const previousPicture = () => {
@@ -42,29 +46,42 @@ const slider = (() => {
     if (index >= 0) {
       document.querySelector(".show").classList.remove("show");
       pictures[index].classList.add("show");
+
+      document.querySelector(".selected").classList.remove("selected");
+      selectCircle();
     }
   };
-  return { nextPicture, previousPicture}
+
+  const selectCircle = () => {
+    const circles = document.querySelectorAll(".circle");
+
+    const activePictureId = document.querySelector(".show").dataset.pictureId;
+    circles[activePictureId].classList.add("selected");
+  }
+
+  const navDots = (() => {
+    const mainContainer = document.querySelector(".main-content");
+
+    const circleContainer = document.createElement("div");
+    circleContainer.classList.add("circle-container");
+    mainContainer.append(circleContainer);
+
+    for (let i = 0; i < pictures.length; i++) {
+      const circle = document.createElement("div");
+      circle.classList.add("circle");
+      circle.dataset.circleId = i;
+      circleContainer.append(circle);
+
+      pictures[i].dataset.pictureId = i;
+    }
+
+    if (document.querySelector(".show")) {
+      selectCircle();
+    }
+  })();
+  
+  return { nextPicture, previousPicture };
 })();
 
-document.querySelector('.arrow-left').onclick = slider.previousPicture;
-document.querySelector('.arrow-right').onclick = slider.nextPicture;
-
-const navDots = () => {
-  const numImg = document.querySelectorAll('.picture');
-  const collageContainer = document.querySelector('.collage');
-  const rightArrow = document.querySelector('.arrow-right');
-
-  const circleContainer = document.createElement('div');
-  circleContainer.classList.add("circle-container")
-  collageContainer.insertBefore(circleContainer, rightArrow);
-
-  for (let i = 0; i < numImg.length; i++) {
-    const circle = document.createElement("div");
-    circle.dataset.circleId = i;
-    circle.classList.add("circle")
-    circleContainer.append(circle);
-  }
-}
-
-navDots();
+document.querySelector(".arrow-left").onclick = slider.previousPicture;
+document.querySelector(".arrow-right").onclick = slider.nextPicture;
