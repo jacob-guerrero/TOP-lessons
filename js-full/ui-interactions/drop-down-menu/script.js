@@ -33,6 +33,7 @@ const slider = (() => {
 
       document.querySelector(".selected").classList.remove("selected");
       selectCircle();
+      resetTimer();
     }
   };
   const previousPicture = () => {
@@ -47,6 +48,7 @@ const slider = (() => {
 
       document.querySelector(".selected").classList.remove("selected");
       selectCircle();
+      resetTimer();
     }
   };
 
@@ -87,8 +89,16 @@ const slider = (() => {
 
       document.querySelector(".selected").classList.remove("selected");
       selectCircle();
+      resetTimer();
     })
   });
+
+  let slideInterval = setInterval(nextPicture, 5000);
+
+  const resetTimer = () => {
+    clearInterval(slideInterval);
+    slideInterval = setInterval(nextPicture, 5000);
+  };
 
   return { nextPicture, previousPicture };
 })();
