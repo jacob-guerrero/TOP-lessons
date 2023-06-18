@@ -20,11 +20,9 @@ updateContent();
 
 const slider = (() => {
   const pictures = document.querySelectorAll(".picture");
-  const circles = document.querySelectorAll(".circle");
-  let index = 0;
 
   const nextPicture = () => {
-    index += 1;
+    let index = +document.querySelector(".show").dataset.pictureId + 1;
 
     if (index >= pictures.length) {
       index = 0;
@@ -38,7 +36,7 @@ const slider = (() => {
     }
   };
   const previousPicture = () => {
-    index -= 1;
+    let index = +document.querySelector(".show").dataset.pictureId - 1;
 
     if (index < 0) {
       index = pictures.length - 1;
@@ -79,7 +77,19 @@ const slider = (() => {
       selectCircle();
     }
   })();
-  
+
+  const circles = document.querySelectorAll(".circle");
+  circles.forEach(circle => {
+    circle.addEventListener('click', (e) => {
+      const index = e.target.dataset.circleId;
+      document.querySelector(".show").classList.remove("show");
+      pictures[index].classList.add("show");
+
+      document.querySelector(".selected").classList.remove("selected");
+      selectCircle();
+    })
+  });
+
   return { nextPicture, previousPicture };
 })();
 
