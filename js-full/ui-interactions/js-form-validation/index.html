@@ -277,6 +277,21 @@
       <button onclick="myFunction()">OK</button>
       <p>If the number is less than 100 or greater than 300, an error message will be displayed.</p>
       <p id="demo"></p>
+
+      <h2>JavaScript Validation</h2>
+      <p>Enter a number and click OK:</p>
+      <input id="id2" type="number" max="100">
+      <button onclick="myFunction2()">OK</button>
+      <p>If the number is greater than 100 (the input's max attribute), an error message will be displayed.</p>
+      <p id="demo2"></p>
+
+      <h2>JavaScript Validation</h2>
+      <p>Enter a number and click OK:</p>
+      <input id="id3" type="number" min="100">
+      <button onclick="myFunction3()">OK</button>
+      <p>If the number is less than 100 (the input's min attribute), an error message will be displayed.</p>
+      <p id="demo3"></p>
+
       <script>
         function myFunction() {
           const inpObj = document.getElementById("id1");
@@ -286,6 +301,26 @@
             document.getElementById("demo").innerHTML = "Input OK";
           } 
         } 
+
+        function myFunction2() {
+          let text;
+          if (document.getElementById("id2").validity.rangeOverflow) {
+            text = "Value too large";
+          } else {
+            text = "Input OK";
+          } 
+          document.getElementById("demo2").innerHTML = text;
+        }
+
+        function myFunction3() {
+          let text;
+          if (document.getElementById("id3").validity.rangeUnderflow) {
+            text = "Value too small";
+          } else {
+            text = "Input OK";
+          } 
+          document.getElementById("demo3").innerHTML = text;
+        }
         </script>
 </body>
 
