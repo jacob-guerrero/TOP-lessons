@@ -271,26 +271,29 @@
       
 
       <!-- Examples from w3 -->
-      <h2>JavaScript Validation</h2>
-      <p>Enter a number and click OK:</p>
-      <input id="id1" type="number" min="100" max="300" required>
-      <button onclick="myFunction()">OK</button>
-      <p>If the number is less than 100 or greater than 300, an error message will be displayed.</p>
-      <p id="demo"></p>
-
-      <h2>JavaScript Validation</h2>
-      <p>Enter a number and click OK:</p>
-      <input id="id2" type="number" max="100">
-      <button onclick="myFunction2()">OK</button>
-      <p>If the number is greater than 100 (the input's max attribute), an error message will be displayed.</p>
-      <p id="demo2"></p>
-
-      <h2>JavaScript Validation</h2>
-      <p>Enter a number and click OK:</p>
-      <input id="id3" type="number" min="100">
-      <button onclick="myFunction3()">OK</button>
-      <p>If the number is less than 100 (the input's min attribute), an error message will be displayed.</p>
-      <p id="demo3"></p>
+      <form>
+        <h2>JavaScript Validation</h2>
+        <p>Enter a number and click OK:</p>
+        <input id="id1" type="number" min="100" max="300" required>
+        <button onclick="myFunction()">OK</button>
+        <p>If the number is less than 100 or greater than 300, an error message will be displayed.</p>
+        <p id="demo"></p>
+        <h2>JavaScript Validation</h2>
+        <p>Enter a number and click OK:</p>
+        <input id="id2" type="number" max="100">
+        <button onclick="myFunction2()">OK</button>
+        <p>If the number is greater than 100 (the input's max attribute), an error message will be displayed.</p>
+        <p id="demo2"></p>
+        <h2>JavaScript Validation</h2>
+        <p>Enter a number and click OK:</p>
+        <input id="id3" type="number" min="100">
+        <button onclick="myFunction3()">OK</button>
+        <p>If the number is less than 100 (the input's min attribute), an error message will be displayed.</p>
+        <p id="demo3"></p>
+        <label for="FS">Select a file smaller than 75 kB : </label>
+        <input type="file" id="FS" />
+        <input type="submit" value="submit">
+      </form>
 
       <script>
         function myFunction() {
@@ -321,7 +324,28 @@
           } 
           document.getElementById("demo3").innerHTML = text;
         }
-        </script>
+
+        function checkFileSize() {
+          const FS = document.getElementById("FS");
+          const fileUploaded = FS.files;
+
+          // If there is (at least) one file selected
+          if (fileUploaded.length > 0) {
+            if (fileUploaded[0].size > 75 * 1024) {
+              // Check the constraint
+              FS.setCustomValidity("The selected file must not be larger than 75 kB");
+              return;
+            }
+          }
+          // No custom constraint violation
+          FS.setCustomValidity("");
+        }
+
+        window.onload = () => {
+          document.getElementById("FS").onchange = checkFileSize;
+        };
+
+      </script>
 </body>
 
 </html>
