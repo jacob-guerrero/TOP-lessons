@@ -7,6 +7,30 @@
     <script src="main.js" defer></script>
 </head>
 <body>
-    <h2>Form Validation</h2>
+    <h2 class="form-title">Form Validation</h2>
+    <form class="form" action="#">
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" required>
+
+        <label for="country">Country</label>
+        <select id="country">
+            <option value="ch">Switzerland</option>
+            <option value="fr">France</option>
+            <option value="de">Germany</option>
+            <option value="nl">Netherlands</option>
+        </select>
+
+        <label for="zip">Zip Code</label>
+        <input type="text" name="zip" id="zip" required>
+
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" required>
+
+        <label for="pass-confirmation">Password Confirmation</label>
+        <input type="password" name="pass-confirmation" id="pass-confirmation" required>
+
+        <button type="submit">Submit</button>
+    </form>
+
 </body>
 </html>
