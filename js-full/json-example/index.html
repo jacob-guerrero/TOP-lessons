@@ -20,17 +20,18 @@
     <section class="preview"></section>
   </body>
   <script>
-    const section = document.querySelector('section');
+    const section = document.querySelector("section");
 
-    let para1 = document.createElement('p');
-    let para2 = document.createElement('p');
-    let motherInfo = 'The mother cats are called ';
+    let para1 = document.createElement("p");
+    let para2 = document.createElement("p");
+    let motherInfo = "The mother cats are called ";
     let kittenInfo;
-    const requestURL = 'https://mdn.github.io/learning-area/javascript/oojs/tasks/json/sample.json';
+    const requestURL =
+      "https://mdn.github.io/learning-area/javascript/oojs/tasks/json/sample.json";
 
     fetch(requestURL)
-    .then(response => response.text())
-    .then(text => displayCatInfo(text))
+      .then((response) => response.text())
+      .then((text) => displayCatInfo(text));
 
     function displayCatInfo(catString) {
       let total = 0;
@@ -38,6 +39,21 @@
 
       // Add your code here
 
+      const objInfo = JSON.parse(catString);
+      const names = [];
+
+      for (let i = 0; i < objInfo.length; i++) {
+        names.push(objInfo[i].name);
+
+        if(i !== (objInfo.length - 1)) {
+          motherInfo += `${objInfo[i].name}, `; 
+        } else {
+          motherInfo += `and ${objInfo[i].name}.`; 
+        }
+
+        //console.log(objInfo[i].kittens)
+      }
+      console.log(motherInfo)
 
       // Don't edit the code below here!
 
