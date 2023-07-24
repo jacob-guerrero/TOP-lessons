@@ -43,18 +43,26 @@
       const names = [];
 
       for (let i = 0; i < objInfo.length; i++) {
-        names.push(objInfo[i].name);
-
         if(i !== (objInfo.length - 1)) {
           motherInfo += `${objInfo[i].name}, `; 
         } else {
           motherInfo += `and ${objInfo[i].name}.`; 
         }
-
-        //console.log(objInfo[i].kittens)
+        
+        for (let j = 0; j < objInfo[i].kittens.length; j++) {
+          total += 1;
+          
+          if(objInfo[i].kittens[j].gender === "m") {
+            male += 1;
+          }
+        }
       }
-      console.log(motherInfo)
-
+      console.log(motherInfo);
+      kittenInfo = `The total number of kittens are: ${total}, where ${male} are male, and ${total-male} female.`;
+      console.log(total);
+      console.log(male);
+      console.log(kittenInfo)
+      
       // Don't edit the code below here!
 
       para1.textContent = motherInfo;
