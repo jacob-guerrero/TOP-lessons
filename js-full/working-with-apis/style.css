@@ -1,71 +1,106 @@
-@import url('https://fonts.googleapis.com/css?family=Special+Elite');
+@import url("https://fonts.googleapis.com/css?family=Special+Elite");
 
 html {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-  }
-  *, *:before, *:after {
-    -webkit-box-sizing: inherit;
-    -moz-box-sizing: inherit;
-    box-sizing: inherit;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
 }
 
-html, body {
-	height: 100%;
-	margin: 0;
+html,
+body {
+  height: 100%;
+  margin: 0;
 }
 
 body {
-	font-family: 'Special Elite', cursive;
-	background: #fffdf5;
-	color: #3f3f5a;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
+  font-family: "Special Elite", cursive;
+  background: #fffdf5;
+  color: #3f3f5a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .container {
-    padding: 4rem;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 blockquote {
-	font-weight: 100;
-	font-size: 2rem;
-	max-width: 600px;
-	line-height: 1.4;
-	position: relative;
-	margin: 0;
-	padding: .5rem;
+  font-weight: 100;
+  font-size: 2rem;
+  max-width: 600px;
+  line-height: 1.4;
+  position: relative;
+  margin: 0;
+  padding: 0.5rem;
 }
 
 blockquote:before,
 blockquote:after {
-	position: absolute;
-	color: #f1efe6;
-	font-size: 8rem;
-	width: 4rem;
-	height: 4rem;
+  position: absolute;
+  color: #f1efe6;
+  font-size: 8rem;
+  width: 4rem;
+  height: 4rem;
 }
 
 blockquote:before {
-	content: '“';
-	left: -3.5rem;
-	top: -2rem;
+  content: "“";
+  left: -3.5rem;
+  top: -2rem;
 }
 
 blockquote:after {
-	content: '”';
-	right: -3.5rem;
-	bottom: 1rem;
+  content: "”";
+  right: -3.5rem;
+  bottom: 1rem;
 }
 
 cite {
-	line-height: 3;
-	text-align: left;
+  line-height: 3;
+  text-align: left;
+}
+
+/* Buttons */
+.button-54 {
+  margin-top: 1rem;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  letter-spacing: 2px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #000;
+  cursor: pointer;
+  border: 3px solid;
+  padding: 0.25em 0.5em;
+  box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px,
+    5px 5px 0px 0px;
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-54:active {
+  box-shadow: 0px 0px 0px 0px;
+  top: 5px;
+  left: 5px;
+}
+
+@media (min-width: 768px) {
+  .button-54 {
+    padding: 0.25em 0.75em;
+  }
 }
