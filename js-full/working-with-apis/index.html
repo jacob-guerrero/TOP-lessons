@@ -4,22 +4,38 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Faboulous Gif</title>
+    <link rel="stylesheet" href="./style.css">
   </head>
   <body>
-    <h1 style="text-align: center;">That's an awesome cat gif!</h1>
-    <img src="#" style="margin: auto; width: 100%;"/>
+    <h1 style="text-align: center">That's an awesome cat gif!</h1>
+    <img src="#" style="margin: 0 auto; display: block; max-width: 400px" />
+    <div class="container">
+      <blockquote></blockquote>
+      <cite></cite>
+
+    </div>
 
     <script>
       const img = document.querySelector("img");
+      const blockquote = document.querySelector("blockquote");
+      const cite = document.querySelector("cite");
+
       fetch(
         "https://api.giphy.com/v1/gifs/translate?api_key=biAftOinW87k4CmMpEKVnHe2yJHbdn55&s=cats",
         { mode: "cors" }
       )
         .then(function (response) {
-          return (response.json());
+          return response.json();
         })
         .then(function (response) {
           img.src = response.data.images.original.url;
+        });
+
+      fetch("https://api.quotable.io/random", { mode: "cors" })
+        .then((res) => res.json())
+        .then((res) => {
+          blockquote.innerText = `${res.content}`;
+          cite.innerText = `${res.author}`;
         });
     </script>
   </body>
