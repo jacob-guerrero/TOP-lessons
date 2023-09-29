@@ -8,8 +8,22 @@
   </head>
   <body>
     <h1 style="text-align: center">That's an awesome cat gif!</h1>
-    <img src="#" style="margin: 0 auto; display: block; max-height: calc(100vh/3)" />
+    <img
+      src="#"
+      style="margin: 0 auto; display: block; max-height: calc(100vh / 3)"
+    />
+
     <button class="button-54" role="button">Mneeww Gif!</button>
+
+    <div class="form-container">
+      <h2 class="search-title">Or... let your imagination go wild:</h2>
+      <form action="#" class="search-bar">
+        <input type="search" name="search" pattern=".*\S.*" required />
+        <button class="search-btn" type="submit">
+          <span>Search</span>
+        </button>
+      </form>
+    </div>
 
     <div class="container">
       <blockquote></blockquote>
@@ -21,6 +35,9 @@
       const blockquote = document.querySelector("blockquote");
       const cite = document.querySelector("cite");
       const btnNewGif = document.querySelector("button");
+      const searchBar = document.querySelector(".search-bar");
+
+      searchBar.addEventListener("click", (e) => e.preventDefault());
 
       fetch("https://api.quotable.io/random", { mode: "cors" })
         .then((res) => res.json())
@@ -31,7 +48,7 @@
 
       const updateGif = () => {
         fetch(
-          "https://api.giphy.com/v1/gifs/translate?api_key=biAftOinW87k4CmMpEKVnHe2yJHbdn55&s=cats",
+          "https://api.giphy.com/v1/gifs/translate?api_key=biAftOinW87k4CmMpEKVnHe2yJHbdn55&s=cat",
           { mode: "cors" }
         )
           .then(function (response) {
@@ -42,7 +59,7 @@
           });
       };
       updateGif();
-      
+
       btnNewGif.addEventListener("click", updateGif);
     </script>
   </body>
