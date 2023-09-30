@@ -41,7 +41,7 @@
       const title = document.querySelector(".main-title");
       const img = document.querySelector("img");
       const btnNewGif = document.querySelector(".btn-new-gif");
-      
+
       const searchBtn = document.querySelector(".search-btn");
       const searchInput = document.querySelector(".search-input");
       let inputValue;
@@ -58,13 +58,13 @@
           btnNewGif.innerText = `Another One!`;
         }
         title.innerText = `That's an awesome ${inputValue} gif!`;
-      }
+      };
 
       searchBtn.addEventListener("click", (e) => {
         e.preventDefault();
-        
+
         updateGif(searchInput.value);
-        updateTextContent(searchInput.value)
+        updateTextContent(searchInput.value);
       });
 
       fetch("https://api.quotable.io/random", { mode: "cors" })
@@ -82,10 +82,17 @@
           { mode: "cors" }
         )
           .then(function (response) {
+            console.log(response);
             return response.json();
           })
           .then(function (response) {
             img.src = response.data.images.original.url;
+            console.log((response));
+          })
+          .catch(() => {
+            img.src = "./img/error404.jpg";
+            btnNewGif.innerText = `Oops!`;
+            title.innerText = `There is not such a gif!`;
           });
       };
 
