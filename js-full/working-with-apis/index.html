@@ -7,13 +7,14 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <h1 style="text-align: center">That's an awesome cat gif!</h1>
-    <img
-      src="#"
-      style="margin: 0 auto; display: block; max-height: calc(100vh / 3)"
-    />
-
-    <button class="button-54" role="button">Mneeww Gif!</button>
+    <h1 class="main-title" style="text-align: center"></h1>
+    <div class="gif-container">
+      <img
+        src="#"
+        style="margin: 0 auto; display: block; max-height: calc(100vh / 3)"
+      />
+      <button class="button-54 btn-new-gif" role="button"></button>
+    </div>
 
     <div class="form-container">
       <h2 class="search-title">Or... let your imagination go wild:</h2>
@@ -37,19 +38,33 @@
     </div>
 
     <script>
+      const title = document.querySelector(".main-title");
       const img = document.querySelector("img");
-      const blockquote = document.querySelector("blockquote");
-      const cite = document.querySelector("cite");
-      const btnNewGif = document.querySelector("button");
-
+      const btnNewGif = document.querySelector(".btn-new-gif");
+      
       const searchBtn = document.querySelector(".search-btn");
       const searchInput = document.querySelector(".search-input");
       let inputValue;
 
+      const blockquote = document.querySelector("blockquote");
+      const cite = document.querySelector("cite");
+
+      const updateTextContent = (value) => {
+        if (value === "") {
+          inputValue = "cat";
+          btnNewGif.innerText = `Mneeww Gif!`;
+        } else {
+          inputValue = value;
+          btnNewGif.innerText = `Another One!`;
+        }
+        title.innerText = `That's an awesome ${inputValue} gif!`;
+      }
+
       searchBtn.addEventListener("click", (e) => {
         e.preventDefault();
-        console.log(searchInput.value);
+        
         updateGif(searchInput.value);
+        updateTextContent(searchInput.value)
       });
 
       fetch("https://api.quotable.io/random", { mode: "cors" })
@@ -61,6 +76,7 @@
 
       const updateGif = (value) => {
         value === "" ? (inputValue = "cats") : (inputValue = value);
+
         fetch(
           `https://api.giphy.com/v1/gifs/translate?api_key=biAftOinW87k4CmMpEKVnHe2yJHbdn55&s=${inputValue}`,
           { mode: "cors" }
@@ -72,6 +88,8 @@
             img.src = response.data.images.original.url;
           });
       };
+
+      updateTextContent("");
       updateGif("");
 
       btnNewGif.addEventListener("click", () => updateGif(inputValue));
