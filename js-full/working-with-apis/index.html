@@ -50,7 +50,7 @@
       const cite = document.querySelector("cite");
 
       const updateTextContent = (value) => {
-        if (value === "") {
+        if (value === "" || value === "cats" || value === "cat") {
           inputValue = "cat";
           btnNewGif.innerText = `Mneeww Gif!`;
         } else {
@@ -74,10 +74,16 @@
           cite.innerText = `${res.author}`;
         });
 
-      const updateGif = (value) => {
+      const handleError = () => {
+        img.src = "./img/error404.jpg";
+        btnNewGif.innerText = `Oops!`;
+        title.innerText = `There is not such a gif!`;
+      };
+
+      const updateGif = async (value) => {
         value === "" ? (inputValue = "cats") : (inputValue = value);
 
-        fetch(
+        /* fetch(
           `https://api.giphy.com/v1/gifs/translate?api_key=biAftOinW87k4CmMpEKVnHe2yJHbdn55&s=${inputValue}`,
           { mode: "cors" }
         )
@@ -93,7 +99,20 @@
             img.src = "./img/error404.jpg";
             btnNewGif.innerText = `Oops!`;
             title.innerText = `There is not such a gif!`;
-          });
+          }); */
+
+        try {
+          const response = await fetch(
+            `https://api.giphy.com/v1/gifs/translate?api_key=biAftOinW87k4CmMpEKVnHe2yJHbdn55&s=${inputValue}`,
+            { mode: "cors" }
+          );
+          const responseData = await response.json();
+          img.src = responseData.data.images.original.url;
+        } catch (error) {
+          img.src = "./img/error404.jpg";
+          btnNewGif.innerText = `Oops!`;
+          title.innerText = `There is not such a gif!`;
+        }
       };
 
       updateTextContent("");
