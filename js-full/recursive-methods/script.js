@@ -19,6 +19,14 @@ function sumToArithProg(num) {
   return (num * (1 + num)) / 2;
 }
 
-console.log(sumToFor(1));
+/* console.log(sumToFor(1));
 console.log(sumToRecursion(1));
-console.log(sumToArithProg(1));
+console.log(sumToArithProg(1)); */
+
+// --------------------------
+
+/* Calculate Factorial */
+
+function factorial(num) {
+  return num === 1 ? num : (num *= factorial(num - 1));
+}
