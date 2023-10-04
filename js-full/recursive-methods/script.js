@@ -9,4 +9,13 @@ function sumToFor(num) {
   return sum;
 }
 
+function sumToRecursion(num) {
+  if (num === 1) {
+    return num;
+  } else {
+    return (num += sumToRecursion(num - 1));
+  }
+}
+
 console.log(sumToFor(1));
+console.log(sumToRecursion(1))
