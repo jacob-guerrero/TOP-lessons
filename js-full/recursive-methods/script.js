@@ -53,3 +53,37 @@ function fibFor(num) {
     return out;
   }
 }
+
+// ----------------------------
+
+/* Printing lists */
+let list = {
+  value: 1,
+  next: {
+    value: 2,
+    next: {
+      value: 3,
+      next: {
+        value: 4,
+        next: null,
+      },
+    },
+  },
+};
+
+function printListLoop(list) {
+  while (list) {
+    console.log(list.value);
+    list = list.next;
+  }
+}
+
+function printListRecursive(list) {
+  if (list) {
+    console.log(list.value);
+    printListRecursive(list.next);
+  }
+}
+
+// printListLoop(list);
+// printListRecursive(list);
