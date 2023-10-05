@@ -30,3 +30,26 @@ console.log(sumToArithProg(1)); */
 function factorial(num) {
   return num === 1 ? num : (num *= factorial(num - 1));
 }
+
+/* Calculate Fibonacci */
+
+function fib(num) {
+  return num <= 1 ? num : fib(num - 1) + fib(num - 2);
+}
+
+function fibFor(num) {
+  let prev = 1;
+  let next = 1;
+  let out = 0;
+
+  if (num <= 2) {
+    return 1;
+  } else {
+    for (let i = 2; i < num; i++) {
+      out = prev + next;
+      prev = next;
+      next = out;
+    }
+    return out;
+  }
+}
