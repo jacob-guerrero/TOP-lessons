@@ -15,4 +15,6 @@ function guessingGame() {
   alert(message);
 }
 
-guessingGame();
+// guessingGame();
+
+module.exports = evaluateGuess;
