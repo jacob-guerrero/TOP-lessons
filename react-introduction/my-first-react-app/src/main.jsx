@@ -5,6 +5,7 @@ import './index.css'
 import Greeting from './Greeting.jsx'
 import { FavoriteFoodTitle, FavoriteFood } from './FavoriteFood.jsx'
 import Items from './Items.jsx'
+import Bio from './Bio.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -12,6 +13,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <Greeting />
     <FavoriteFoodTitle />
     <FavoriteFood />
-    <Items/>
+    <Items />
+    <Bio />
   </React.StrictMode>,
 )
