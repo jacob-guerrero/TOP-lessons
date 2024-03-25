@@ -1,6 +1,6 @@
 function ListItem(props) {
     return <li>{props.animal}</li>
-  }
+}
   
 function List(props) {
     return (
@@ -10,7 +10,7 @@ function List(props) {
         })}
       </ul>
     );
-  }
+}
   
 function AppProps() {
     const animals = ["Fox", "Pig", "Monkey", "Dragon"];
