@@ -6,6 +6,7 @@ import AppProps from './AppProps.jsx'
 import ConditionalElements from './ConditionalElements.jsx'
 import Recipes from './Recipes.jsx'
 import Gallery from './Scientists.jsx'
+import Profile from './ProfileCard.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -14,5 +15,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <ConditionalElements />
     <Recipes />
     <Gallery />
+    <Profile />
   </React.StrictMode>,
 )
