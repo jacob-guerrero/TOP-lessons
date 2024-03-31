@@ -2,6 +2,33 @@ import { useState } from "react";
 import sculptureList from "./data";
 import "./App.css";
 
+function SendForm() {
+  const [isSent, setIsSent] = useState(false);
+  const [message, setMessage] = useState("");
+
+  if (isSent) {
+    return <h1>Thank you!</h1>;
+  }
+
+  return (
+    <form
+      onSubmit={(e) => {
+        e.preventDefault();
+        alert(`Sending: "${message}"`);
+        setIsSent(true);
+      }}
+    >
+      <textarea
+        placeholder="Message"
+        value={message}
+        onChange={(e) => setMessage(e.target.value)}
+      />
+      <br />
+      <button type="submit">Send</button>
+    </form>
+  );
+}
+
 function App() {
   const [index, setIndex] = useState(0);
   const [showMore, setShowMore] = useState(false);
@@ -43,6 +70,9 @@ function App() {
       </button>
       {showMore && <p>{sculpture.description}</p>}
       <img src={sculpture.url} alt={sculpture.alt} />
+
+      <br />
+      <SendForm></SendForm>
     </>
   );
 }
