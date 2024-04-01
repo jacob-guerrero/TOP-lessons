@@ -2,6 +2,46 @@ import { useState } from "react";
 import sculptureList from "./data";
 import "./App.css";
 
+function ColorsElement() {
+  const COLORS = ["pink", "green", "blue", "yellow", "purple", "cyan"];
+  const [backgroundColor, setBackgroundColor] = useState(COLORS[0]);
+  const [numChanges, setNumChanges] = useState(0);
+
+  const onButtonClick = (color) => () => {
+    setBackgroundColor(color);
+
+    if(backgroundColor !== color) {
+      setNumChanges(numChanges + 1);
+    }
+  };
+  const onResetClick = () => {
+    setNumChanges(0);
+  }
+
+  return (
+    <>
+      <div
+        className="colors-container"
+        style={{
+          backgroundColor,
+        }}
+      >
+        {COLORS.map((color) => (
+          <button
+            type="button"
+            key={color}
+            onClick={onButtonClick(color)}
+            className={backgroundColor === color ? "selected" : ""}
+          >
+            {color}
+          </button>
+        ))}
+      </div>
+      <button onClick={onResetClick}>num of changes: {numChanges} (click to reset)</button>
+    </>
+  );
+}
+
 function SendForm() {
   const [isSent, setIsSent] = useState(false);
   const [message, setMessage] = useState("");
@@ -73,6 +113,7 @@ function App() {
 
       <br />
       <SendForm></SendForm>
+      <ColorsElement></ColorsElement>
     </>
   );
 }
