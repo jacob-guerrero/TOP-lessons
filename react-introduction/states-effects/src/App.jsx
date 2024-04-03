@@ -2,6 +2,23 @@ import { useState } from "react";
 import sculptureList from "./data";
 import "./App.css";
 
+function Person() {
+  const [person, setPerson] = useState({ name: "John", number: 100 });
+
+  const handleIncrease = () => {
+    setPerson((prevPerson) => ({ ...prevPerson, number: prevPerson.number + 1 }));
+    setPerson((prevPerson) => ({ ...prevPerson, number: prevPerson.number + 1 }));
+  };
+
+  return (
+    <>
+      <h1>Increase the number</h1>
+      <h2>{person.number}</h2>
+      <button onClick={handleIncrease}>Increase Num 2 times</button>
+    </>
+  );
+} 
+
 function ColorsElement() {
   const COLORS = ["pink", "green", "blue", "yellow", "purple", "cyan"];
   const [backgroundColor, setBackgroundColor] = useState(COLORS[0]);
@@ -114,6 +131,7 @@ function App() {
       <br />
       <SendForm></SendForm>
       <ColorsElement></ColorsElement>
+      <Person></Person>
     </>
   );
 }
