@@ -2,6 +2,28 @@ import { useState } from "react";
 import sculptureList from "./data";
 import "./App.css";
 
+function TrafficLight() {
+  const [walk, setWalk] = useState(true);
+
+  function handleClick() {
+    setWalk(!walk);
+    alert(walk ? 'Stop is next' : 'Walk is next');
+  }
+
+  return (
+    <>
+      <button onClick={handleClick}>
+        Change to {walk ? 'Stop' : 'Walk'}
+      </button>
+      <h1 style={{
+        color: walk ? 'darkgreen' : 'darkred'
+      }}>
+        {walk ? 'Walk' : 'Stop'}
+      </h1>
+    </>
+  );
+}
+
 function Person() {
   const [person, setPerson] = useState({ name: "John", number: 100 });
 
@@ -15,6 +37,7 @@ function Person() {
       <h1>Increase the number</h1>
       <h2>{person.number}</h2>
       <button onClick={handleIncrease}>Increase Num 2 times</button>
+      <br />
     </>
   );
 } 
@@ -132,6 +155,7 @@ function App() {
       <SendForm></SendForm>
       <ColorsElement></ColorsElement>
       <Person></Person>
+      <TrafficLight></TrafficLight>
     </>
   );
 }
