@@ -2,6 +2,35 @@ import { useState } from "react";
 import sculptureList from "./data";
 import "./App.css";
 
+function SyncedInputs() {
+  const [text, setText] = useState('');
+
+  function handleChange(e) {
+    setText(e.target.value);
+  }
+
+  return (
+    <>
+      <h2>Synced Inputs</h2>
+      <Input label="First input" text={text} onChange= {handleChange}/>
+      <Input label="Second input" text={text} onChange= {handleChange} />
+    </>
+  );
+}
+
+function Input({ label, text, onChange }) {
+  return (
+    <label>
+      {label}
+      {' '}
+      <input
+        value={text}
+        onChange={onChange}
+      />
+    </label>
+  );
+}
+
 function Menu() {
   const initialItems = [
     { title: 'pretzels', id: 0 },
@@ -248,6 +277,7 @@ function App() {
       <TrafficLight></TrafficLight>
       <Form></Form>
       <Menu></Menu>
+      <SyncedInputs></SyncedInputs>
     </>
   );
 }
