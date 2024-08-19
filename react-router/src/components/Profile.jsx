@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import Popeye from "./Popeye";
 import Spinach from "./Spinach";
 import DefaultProfile from "./DefaultProfile";
+import SecretNavigation from "./SecretNavigation";
 
 const Profile = () => {
   const { name } = useParams();
@@ -16,6 +17,8 @@ const Profile = () => {
         <Popeye></Popeye>
       ) : name === "spinach" ? (
         <Spinach></Spinach>
+      ) : name === "secret" ? (
+        <SecretNavigation></SecretNavigation>
       ) : (
         <DefaultProfile></DefaultProfile>
       )}

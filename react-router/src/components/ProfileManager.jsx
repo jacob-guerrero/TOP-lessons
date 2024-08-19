@@ -12,6 +12,9 @@ const ProfileManager = () => {
         <li>
           <Link to="spinach">Spinach</Link>
         </li>
+        <li>
+          <Link to="secret">Secret</Link>
+        </li>
       </ul>
     </>
   );
