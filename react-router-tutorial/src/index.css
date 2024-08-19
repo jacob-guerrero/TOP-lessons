@@ -80,6 +80,14 @@ button:active {
   color: #eeb004;
 }
 
+.likes {
+  padding: 0.5rem;
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+  justify-content: center;
+}
+
 form[action$="destroy"] button {
   color: #f44250;
 }

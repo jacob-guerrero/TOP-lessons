@@ -1,6 +1,9 @@
-import { Form } from "react-router-dom";
+import { Form, useOutletContext, useParams } from "react-router-dom";
 
 export default function Contact() {
+  const [count1, count2] = useOutletContext();
+  const { contactId } = useParams();
+
   const contact = {
     first: "Your",
     last: "Name",
@@ -43,6 +46,8 @@ export default function Contact() {
         )}
 
         {contact.notes && <p>{contact.notes}</p>}
+
+        {contactId === "1" ? <p>Likes: {count1}</p> : <p>Likes: {count2}</p>}
 
         <div>
           <Form action="edit">

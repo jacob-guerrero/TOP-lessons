@@ -1,6 +1,17 @@
-import { Outlet } from "react-router-dom";
+import { useState } from "react";
+import { Link, Outlet } from "react-router-dom";
 
 export default function Root() {
+  const [count1, setCount1] = useState(0);
+  const [count2, setCount2] = useState(0);
+
+  const handleClickContact1 = () => {
+    setCount1((count1) => count1 + 1);
+  };
+  const handleClickContact2 = () => {
+    setCount2((count2) => count2 + 1);
+  };
+
   return (
     <>
       <div id="sidebar">
@@ -24,16 +35,20 @@ export default function Root() {
         <nav>
           <ul>
             <li>
-              <a href={`/contacts/1`}>Your Name</a>
+              <Link to={`/contacts/1`}>Your Name</Link>
             </li>
             <li>
-              <a href={`/contacts/2`}>Your Friend</a>
+              <Link to={`/contacts/2`}>Your Friend</Link>
             </li>
           </ul>
         </nav>
       </div>
       <div id="detail">
-        <Outlet></Outlet>
+        <div className="likes">
+          <button onClick={handleClickContact1}>Concact1 (+1)</button>
+          <button onClick={handleClickContact2}>Contact2 (+1)</button>
+        </div>
+        <Outlet context={[count1, count2]}></Outlet>
       </div>
     </>
   );
