@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const ImageFetch = () => {
+const useImageURL = () => {
   const [imageURL, setImageURL] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -18,7 +18,13 @@ const ImageFetch = () => {
       .finally(() => setLoading(false));
   }, []);
 
-  if (loading) return <p>Loading...</p>
+  return { imageURL, error, loading };
+};
+
+const ImageFetch = () => {
+  const { imageURL, error, loading } = useImageURL();
+
+  if (loading) return <p>Loading...</p>;
   if (error) return <p>A network error was encountered</p>;
 
   return (
