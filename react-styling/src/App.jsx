@@ -1,4 +1,5 @@
 import './App.css'
+import StyledBtnComp from './components/StyledBtnComp'
 import StyledBtnMod from './components/StyledBtnMod'
 
 function App() {
@@ -15,7 +16,8 @@ function App() {
       <div className="card">
         <h2>Using styled-components</h2>
         <button>No Styled</button>
-
+        <StyledBtnComp href="#">Default Button</StyledBtnComp>
+        <StyledBtnComp primary="true" href="#">Primary Button</StyledBtnComp>
       </div>
     </>
   )
