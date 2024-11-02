@@ -9,6 +9,14 @@ app.use("/authors", authorRouter);
 app.use("/books", bookRouter);
 app.use("/contact", contactRouter);
 app.use("/", indexRouter);
+/* Handling Errors */
+app.use((req, res, next) => {
+  throw new Error("OH NO!");
+});
+app.use((err, req, res, next) => {
+  console.error(err);
+  res.status(err.statusCode || 500).send(err.message);
+});
 
 const PORT = 3000;
 
