@@ -14,7 +14,7 @@ exports.usersCreateGet = (req, res) => {
 };
 
 exports.usersCreatePost = (req, res) => {
-  const { firstName, lasName } = req.body;
-  usersStorage.addUser({ firstName, lasName });
+  const { firstName, lastName } = req.body;
+  usersStorage.addUser({ firstName, lastName });
   res.redirect("/");
 };
