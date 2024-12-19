@@ -113,7 +113,29 @@ exports.userDeletePost = (req, res) => {
 };
 
 exports.userSearch = (req, res) => {
+  const { searchName, searchEmail } = req.query;
+
+  // Filter users by name and/or email.
+  let results = usersStorage.getUsers();
+
+  if (searchName) {
+    results = results.filter((user) =>
+      `${user.firstName} ${user.lastName}`
+        .toLowerCase()
+        .includes(searchName.toLowerCase())
+    );
+  }
+
+  if (searchEmail) {
+    results = results.filter((user) =>
+      user.email.toLowerCase().includes(searchEmail.toLowerCase())
+    );
+  }
+
   res.render("searchUser", {
     title: "Search user",
+    results,
+    searchName,
+    searchEmail,
   });
 };
