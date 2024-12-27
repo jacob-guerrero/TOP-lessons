@@ -6,6 +6,14 @@
     <title><%= title %></title>
   </head>
   <body>
-    
+    <h1><%= title %></h1>
+
+    <p>Usernames: <%= usernames.map((user) => user.username).join(", ") %></p>
+
+    <form action="/" method="GET">
+      <label for="userSearch">Search:</label>
+      <input type="text" name="userSearch" id="userSearch" required />
+      <button type="submit">Submit</button>
+    </form>
   </body>
 </html>
