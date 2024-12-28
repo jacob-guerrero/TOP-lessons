@@ -20,12 +20,6 @@ const getUsernames = async (req, res) => {
   }
 };
 
-const getUsernamesSearch = async (req, res) => {
-  console.log(req.query.userSearch);
-  const usernames = await db.searchUsername(req.query.userSearch);
-  res.send("Usernames Found: ", usernames);
-};
-
 const createUsernameGet = async (req, res) => {
   await res.render("createUser", { title: "Form" });
 };
@@ -37,9 +31,14 @@ const createUsernamePost = async (req, res) => {
   res.redirect("/");
 };
 
+const deleteUsernames = async (req, res) => {
+  await db.deleteAllUsernames();
+  res.redirect("/");
+};
+
 module.exports = {
   getUsernames,
-  getUsernamesSearch,
   createUsernameGet,
   createUsernamePost,
+  deleteUsernames,
 };
