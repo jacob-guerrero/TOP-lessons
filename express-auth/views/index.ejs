@@ -1,11 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Auth Users</title>
-</head>
-<body>
-    <h1>Hello Users!</h1>
-</body>
+  </head>
+  <body>
+    <% if (locals.user) {%>
+        <h1>WELCOME BACK <%= user.username %></h1>
+        <p>The current user is: <%= currentUser.username %></p>
+        <a href="/log-out">LOG OUT</a>
+
+    <% } else { %>
+        <h1>Please Log In!</h1>
+
+        <form action="/log-in" method="POST">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" placeholder="username" />
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" />
+
+        <button>Log In</button>
+        </form>
+    <% } %>
+  </body>
 </html>
